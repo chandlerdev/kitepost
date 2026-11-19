@@ -88,6 +88,7 @@ a.btn{text-decoration:none;color:inherit}
 .field label,.lbl{font-weight:600;font-size:.85rem}
 .hint{font-size:.78rem;color:var(--muted)}
 .err{font-size:.8rem;color:var(--bad);font-weight:500}
+.ok-note{font-size:.8rem;color:var(--ok);font-weight:500}
 input[type=text],input[type=email],input[type=url],input[type=tel],textarea,select{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 11px}
 input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 textarea{resize:vertical;min-height:110px}

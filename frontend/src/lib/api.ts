@@ -2,7 +2,7 @@
 // - Sends the session cookie automatically (same origin).
 // - Adds the CSRF token (KITEPOST-XSRF cookie → X-XSRF-TOKEN header) to every POST/PATCH/DELETE.
 // - Throws ApiError with the server's plain-language message.
-import type { AuditEvent, CampaignOut, Category, LeadOut, NewCampaignInput, NotificationList, Reference, ReplyOut, Role, Status, Strategy, Suppression, Template, TemplateInput, TeamMember, User } from "./types";
+import type { AuditEvent, CampaignOut, Category, LeadOut, MailInput, MailSettings, MailTest, NewCampaignInput, NotificationList, Reference, ReplyOut, Role, Status, Strategy, Suppression, Template, TemplateInput, TeamMember, User } from "./types";
 
 export class ApiError extends Error {
   constructor(message: string, public status: number, public code?: string) { super(message); }
@@ -104,6 +104,11 @@ export const api = {
   answer: (id: string, body: string) => call<ReplyOut>("POST", `/replies/${id}/answer`, { body }),
   checkInbox: () => call<{ ok: boolean; imap: boolean }>("POST", "/replies/check"),
 
+  mailSettings: () => call<MailSettings>("GET", "/settings/mail"),
+  saveMailSettings: (m: MailInput) => call<MailSettings>("PUT", "/settings/mail", m),
+  resetMailSettings: () => call<MailSettings>("DELETE", "/settings/mail"),
+  testMailSending: () => call<MailTest>("POST", "/settings/mail/test/sending"),
+  testMailReplies: () => call<MailTest>("POST", "/settings/mail/test/replies"),
   suppression: () => call<Suppression[]>("GET", "/suppression"),
   suppress: (value: string) => call<Suppression[]>("POST", "/suppression", { value }),
   unsuppress: (value: string) => call<Suppression[]>("DELETE", `/suppression/${encodeURIComponent(value)}`)

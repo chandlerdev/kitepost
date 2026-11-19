@@ -134,7 +134,24 @@ export interface Mode {
   replies: "imap" | "simulated" | "off";
   dailySendLimit: number;
   sendIntervalSeconds: number;
+  fromAddress: string | null;
+  replyAddress: string | null;
 }
+/** Mail configuration (Settings). Passwords are never returned, only whether one is saved. */
+export interface MailSettings {
+  source: "settings" | "server";
+  encryptionReady: boolean;
+  passwordProblem: boolean;
+  smtpHost: string; smtpPort: number; smtpSsl: boolean; smtpUser: string; smtpPassSet: boolean;
+  fromAddress: string; sendReal: boolean;
+  imapHost: string; imapPort: number; imapSsl: boolean; imapUser: string; imapPassSet: boolean; imapMailbox: string;
+  effectiveFrom: string | null; effectiveReply: string | null;
+  updatedAt: string | null; updatedBy: string | null;
+}
+export type MailInput = Omit<MailSettings, "source" | "encryptionReady" | "passwordProblem" | "smtpPassSet" | "imapPassSet" | "effectiveFrom" | "effectiveReply" | "updatedAt" | "updatedBy">
+  & { smtpPass: string; imapPass: string };
+export interface MailTest { ok: boolean; message: string }
+
 export interface Status { mode: Mode; sentToday: number; reviewCount: number; unreadReplies: number; unreadOpens: number }
 
 /* ---------- templates & notifications ---------- */

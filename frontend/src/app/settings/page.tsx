@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { api } from "@/lib/api";
 import { ago } from "@/lib/format";
-import type { AuditEvent, Role, Suppression, TeamMember } from "@/lib/types";
+import type { AuditEvent, MailInput, MailSettings, MailTest, Role, Suppression, TeamMember } from "@/lib/types";
 import { useApp, useBusy } from "@/components/AppContext";
 import { ModeBanner } from "@/components/ui";
 
@@ -94,6 +94,108 @@ function Audit() {
   );
 }
 
+const BLANK_MAIL: MailInput & { smtpPassSet: boolean; imapPassSet: boolean } = {
+  smtpHost: "", smtpPort: 587, smtpSsl: false, smtpUser: "", smtpPass: "", smtpPassSet: false, fromAddress: "", sendReal: false,
+  imapHost: "", imapPort: 993, imapSsl: true, imapUser: "", imapPass: "", imapPassSet: false, imapMailbox: "INBOX"
+};
+
+/** Mail configuration: the mailbox emails are sent from, and the one replies are read from. Passwords are saved encrypted. */
+function MailConfig() {
+  const { toast, refresh } = useApp();
+  const [saved, setSaved] = useState<MailSettings | null>(null);
+  const [f, setF] = useState(BLANK_MAIL);
+  const [tests, setTests] = useState<{ sending?: MailTest; replies?: MailTest }>({});
+  const [busy, run] = useBusy();
+
+  const fill = useCallback((s: MailSettings) => {
+    setSaved(s);
+    setF({ smtpHost: s.smtpHost, smtpPort: s.smtpPort, smtpSsl: s.smtpSsl, smtpUser: s.smtpUser, smtpPass: "", smtpPassSet: s.smtpPassSet,
+      fromAddress: s.fromAddress || s.effectiveFrom || "", sendReal: s.sendReal,
+      imapHost: s.imapHost, imapPort: s.imapPort, imapSsl: s.imapSsl, imapUser: s.imapUser, imapPass: "", imapPassSet: s.imapPassSet, imapMailbox: s.imapMailbox || "INBOX" });
+  }, []);
+  useEffect(() => { api.mailSettings().then(fill).catch(e => toast(e.message, true)); }, [fill, toast]);
+
+  const set = (patch: Partial<typeof f>) => { setF(x => ({ ...x, ...patch })); setTests({}); };
+  const input = (id: string, label: string, key: "smtpHost" | "smtpUser" | "fromAddress" | "imapHost" | "imapUser" | "imapMailbox", type = "text", hint?: string, auto = "off") => (
+    <div className="field"><label htmlFor={id}>{label}</label><input id={id} type={type} autoComplete={auto} value={f[key]} onChange={e => set({ [key]: e.target.value })} />{hint && <span className="hint">{hint}</span>}</div>
+  );
+  const pass = (id: string, label: string, key: "smtpPass" | "imapPass", isSet: boolean, hint: string) => (
+    <div className="field"><label htmlFor={id}>{label}</label><input id={id} type="password" autoComplete="new-password" value={f[key]} placeholder={isSet ? "Saved (leave blank to keep it)" : ""} onChange={e => set({ [key]: e.target.value })} /><span className="hint">{hint}</span></div>
+  );
+  const verdict = (t?: MailTest) => t && <p className={t.ok ? "ok-note" : "err"} role="status" style={{ margin: 0 }}>{t.ok ? "✓ " : "✗ "}{t.message}</p>;
+
+  const save = () => run(async () => {
+    const { smtpPassSet, imapPassSet, ...body } = f; void smtpPassSet; void imapPassSet;
+    fill(await api.saveMailSettings(body));
+    await refresh();
+    toast("Mail settings saved.");
+  });
+  const test = (kind: "sending" | "replies") => run(async () => {
+    const r = await (kind === "sending" ? api.testMailSending() : api.testMailReplies());
+    setTests(t => ({ ...t, [kind]: r }));
+  });
+
+  if (!saved) return <section className="panel"><h2>Mail configuration</h2><p className="muted">Loading…</p></section>;
+  return (
+    <section className="panel">
+      <div>
+        <h2>Mail configuration</h2>
+        <p className="muted">The mailbox Kitepost sends from and the mailbox it reads replies in. Passwords are saved encrypted and are never shown again.
+          {saved.source === "server" ? " Right now the values come from the server settings (.env); saving here replaces them." : ` Saved ${saved.updatedAt ? ago(saved.updatedAt) : ""}${saved.updatedBy ? ` by ${saved.updatedBy}` : ""}.`}</p>
+      </div>
+      {!saved.encryptionReady && <p className="err" role="alert">Passwords can&apos;t be saved yet: add <b>MAIL_ENCRYPTION_KEY</b> (a long random value) to the server settings, then restart the backend.</p>}
+      {saved.passwordProblem && <p className="err" role="alert">A saved password can&apos;t be read (the encryption key is missing or was changed). Enter the passwords again and save.</p>}
+
+      <h3>Sending</h3>
+      <div className="grid2">
+        {input("m-shost", "Sending server (SMTP)", "smtpHost", "text", "For example smtp.ionos.com")}
+        <div className="field"><label htmlFor="m-sport">Port and security</label>
+          <select id="m-sport" value={`${f.smtpPort}:${f.smtpSsl}`} onChange={e => { const [p, s] = e.target.value.split(":"); set({ smtpPort: Number(p), smtpSsl: s === "true" }); }}>
+            <option value="587:false">587 · STARTTLS (most common)</option>
+            <option value="465:true">465 · SSL/TLS</option>
+            {![ "587:false", "465:true" ].includes(`${f.smtpPort}:${f.smtpSsl}`) && <option value={`${f.smtpPort}:${f.smtpSsl}`}>{f.smtpPort} · {f.smtpSsl ? "SSL/TLS" : "STARTTLS"}</option>}
+          </select></div>
+        {input("m-suser", "Login (username)", "smtpUser", "text", "Usually the full email address", "off")}
+        {pass("m-spass", "Password", "smtpPass", f.smtpPassSet, "The mailbox password or app password")}
+        {input("m-from", "Send from (From address)", "fromAddress", "email", "Every email goes out from this address")}
+        <label style={{ display: "flex", gap: 8, alignItems: "center", alignSelf: "end", paddingBottom: 8 }}>
+          <input type="checkbox" checked={f.sendReal} onChange={e => set({ sendReal: e.target.checked })} />
+          <span><b>Send real emails</b><span className="hint" style={{ display: "block" }}>Off = approved emails are only recorded (dry run)</span></span>
+        </label>
+      </div>
+      <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
+        <button type="button" className="btn sm" disabled={busy || !saved.smtpHost} onClick={() => test("sending")}>Test sending connection</button>
+        {verdict(tests.sending)}
+      </div>
+
+      <h3>Replies</h3>
+      <div className="grid2">
+        {input("m-ihost", "Reply server (IMAP)", "imapHost", "text", "For example imap.ionos.com. Blank = replies are not read")}
+        <div className="field"><label htmlFor="m-iport">Port and security</label>
+          <select id="m-iport" value={`${f.imapPort}:${f.imapSsl}`} onChange={e => { const [p, s] = e.target.value.split(":"); set({ imapPort: Number(p), imapSsl: s === "true" }); }}>
+            <option value="993:true">993 · SSL/TLS (most common)</option>
+            <option value="143:false">143 · STARTTLS</option>
+            {![ "993:true", "143:false" ].includes(`${f.imapPort}:${f.imapSsl}`) && <option value={`${f.imapPort}:${f.imapSsl}`}>{f.imapPort} · {f.imapSsl ? "SSL/TLS" : "STARTTLS"}</option>}
+          </select></div>
+        {input("m-iuser", "Login (username)", "imapUser", "text", "Replies come to this mailbox. Blank = the sending login")}
+        {pass("m-ipass", "Password", "imapPass", f.imapPassSet, "Blank = the sending password")}
+        {input("m-imbox", "Folder", "imapMailbox", "text", "Usually INBOX")}
+      </div>
+      <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
+        <button type="button" className="btn sm" disabled={busy || !saved.imapHost} onClick={() => test("replies")}>Test reply connection</button>
+        {verdict(tests.replies)}
+      </div>
+      <p className="hint" style={{ margin: 0 }}>Test buttons check the <b>saved</b> settings, so save first.</p>
+
+      <p className="muted" style={{ margin: 0 }}>Emails go out from <b className="mono">{saved.effectiveFrom || "(not set)"}</b>; replies go to <b className="mono">{saved.effectiveReply || "(not set)"}</b>.</p>
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        <button type="button" className="btn primary" disabled={busy} onClick={save}>Save mail settings</button>
+        {saved.source === "settings" && <button type="button" className="btn ghost" disabled={busy} onClick={() => { if (confirm("Forget the saved mail settings and use the server settings (.env) again?")) run(async () => { fill(await api.resetMailSettings()); await refresh(); setTests({}); toast("Using the server settings again."); }); }}>Use server settings</button>}
+      </div>
+    </section>
+  );
+}
+
 export default function SettingsPage() {
   const { status, toast, can } = useApp();
   const [sup, setSup] = useState<Suppression[]>([]);
@@ -108,7 +210,9 @@ export default function SettingsPage() {
     ["Finding companies", m.search !== "demo", m.search === "demo" ? "Demo data" : m.search, "BRAVE_API_KEY, or SERPAPI_KEY, or GOOGLE_CSE_KEY + GOOGLE_CSE_CX"],
     ["Classifying & writing", m.ai === "claude", m.ai === "claude" ? `Claude · ${m.aiModel}` : "Keyword rules", "ANTHROPIC_API_KEY (and optionally ANTHROPIC_MODEL)"],
     ["Sending email", m.email === "smtp", m.email === "smtp" ? "SMTP" : "Dry run", "SMTP_HOST, SMTP_USER, SMTP_PASS and DRY_RUN=false"],
+    ["Emails are sent from", !!m.fromAddress, m.fromAddress || "Not set", "SMTP_FROM (or SMTP_USER when that is an email address)"],
     ["Tracking replies", m.replies === "imap", { imap: "IMAP", simulated: "Simulated", off: "Off" }[m.replies], "IMAP_HOST (uses SMTP_USER/PASS unless IMAP_USER/PASS are set)"],
+    ["Replies are read from", m.replies === "imap" && !!m.replyAddress, m.replyAddress || "Not set", "IMAP_USER (replies go to this mailbox)"],
     ["Send pace", true, `1 per ${m.sendIntervalSeconds}s · ${m.dailySendLimit}/day`, "SEND_INTERVAL_SECONDS and DAILY_SEND_LIMIT"]
   ] : [];
 
@@ -125,6 +229,7 @@ export default function SettingsPage() {
           </table>
         </div>
       </section>
+      {can.admin && <MailConfig />}
       {can.admin && <Team />}
       <section className="panel">
         <div><h2>Do-not-contact list</h2><p className="muted">Emails and domains here are never contacted. People who reply “unsubscribe” or “not interested” are added automatically.{!can.admin && " Only admins can remove entries."}</p></div>

@@ -19,3 +19,7 @@ logs/
 /deploy/ecosystem.config.js
 /kitepost_backend/
 /kitepost_frontend/
+
+# local run logs
+backend/local-run.*
+frontend-dev.*

@@ -103,6 +103,14 @@ The backend takes about a minute to come up. Open `https://jjlltdnext.desss-port
 | Blank page or missing styles | the release was built with another `BASE_PATH` than `/kitepost` |
 | Email opens never appear | `PUBLIC_URL` in `kitepost_backend/.env` must be the public address including `/kitepost` |
 | Changed `kitepost_backend/.env` | `pm2 restart kitepost-backend --update-env` (or run `deploy.sh` again) |
+| Settings > Mail configuration says passwords can't be saved | add `MAIL_ENCRYPTION_KEY=<long random value>` to `kitepost_backend/.env`, then restart as above |
+| Saved mailbox passwords stopped working after a restart | `MAIL_ENCRYPTION_KEY` is missing or was changed: put the old one back, or enter the passwords again in Settings |
+
+## Mail (Settings > Mail configuration)
+Admins set the sending mailbox (SMTP) and the reply mailbox (IMAP) in the app, with a Test button for each.
+The passwords are saved in the database encrypted with AES-256-GCM; the key is `MAIL_ENCRYPTION_KEY` in
+`kitepost_backend/.env` and is never stored in the database. What is saved in Settings wins over the
+`SMTP_` / `IMAP_` lines in `.env`; "Use server settings" goes back to those.
 
 ## Notes
 - **The base path is baked into the web app at build time** (`/kitepost`). To serve it somewhere else, set a

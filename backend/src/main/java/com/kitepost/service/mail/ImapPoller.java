@@ -20,37 +20,42 @@ import java.util.concurrent.locks.ReentrantLock;
 @Component
 public class ImapPoller {
     private static final Logger log = LoggerFactory.getLogger(ImapPoller.class);
-    private final AppProperties.Imap cfg;
-    private final AppProperties.Smtp smtp;
+    private final MailConfigService mail;
     private final MetaService meta;
     private final ReplyRecorder recorder;
     private final ReentrantLock lock = new ReentrantLock();
 
-    public ImapPoller(AppProperties props, MetaService meta, ReplyRecorder recorder) {
-        this.cfg = props.imap();
-        this.smtp = props.smtp();
+    public ImapPoller(MailConfigService mail, MetaService meta, ReplyRecorder recorder) {
+        this.mail = mail;
         this.meta = meta;
         this.recorder = recorder;
     }
 
-    public boolean enabled() { return cfg.enabled(); }
+    public boolean enabled() { return mail.current().imap().enabled(); }
+
+    /** Opens a connection to the reply mailbox with the given settings. The caller closes it. */
+    static Store open(MailConfigService.Effective e) throws MessagingException {
+        AppProperties.Imap cfg = e.imap();
+        Properties p = new Properties();
+        String protocol = cfg.ssl() ? "imaps" : "imap";
+        p.put("mail.store.protocol", protocol);
+        p.put("mail." + protocol + ".ssl.checkserveridentity", "true");
+        if (!cfg.ssl()) p.put("mail.imap.starttls.required", "true");
+        p.put("mail." + protocol + ".connectiontimeout", "15000");
+        p.put("mail." + protocol + ".timeout", "30000");
+        Store store = Session.getInstance(p).getStore(protocol);
+        store.connect(cfg.host(), cfg.port(), e.imapUser(), e.imapPass());
+        return store;
+    }
 
     public void poll() {
         if (!enabled() || !lock.tryLock()) return;
         try {
             Optional<String> firstSent = meta.get("firstSentAt");
             if (firstSent.isEmpty()) return;
-            String user = AppProperties.has(cfg.user()) ? cfg.user() : smtp.user();
-            String pass = AppProperties.has(cfg.pass()) ? cfg.pass() : smtp.pass();
-            Properties p = new Properties();
-            String protocol = cfg.ssl() ? "imaps" : "imap";
-            p.put("mail.store.protocol", protocol);
-            p.put("mail." + protocol + ".ssl.checkserveridentity", "true");
-            if (!cfg.ssl()) p.put("mail.imap.starttls.required", "true");
-            p.put("mail." + protocol + ".connectiontimeout", "15000");
-            p.put("mail." + protocol + ".timeout", "30000");
-            Store store = Session.getInstance(p).getStore(protocol);
-            store.connect(cfg.host(), cfg.port(), user, pass);
+            MailConfigService.Effective e = mail.current();
+            AppProperties.Imap cfg = e.imap();
+            Store store = open(e);
             try {
                 Folder folder = store.getFolder(cfg.mailbox());
                 folder.open(Folder.READ_ONLY);

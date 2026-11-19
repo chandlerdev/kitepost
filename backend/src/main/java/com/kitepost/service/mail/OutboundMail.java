@@ -45,6 +45,7 @@ public class OutboundMail {
     private static final SecureRandom RANDOM = new SecureRandom();
 
     private final AppProperties props;
+    private final MailConfigService mail;
     private final LeadRepository leads;
     private final CampaignRepository campaigns;
     private final ReplyRepository replies;
@@ -55,13 +56,15 @@ public class OutboundMail {
     private final Drafter drafter;
     private final DemoReplies demoReplies;
     private final AuditService audit;
-    private final JavaMailSenderImpl smtp;      // null in dry-run mode
     private final ReentrantLock sending = new ReentrantLock();
+    private volatile AppProperties.Smtp builtFor;      // the settings the cached sender was built from
+    private volatile JavaMailSenderImpl built;
 
-    public OutboundMail(AppProperties props, LeadRepository leads, CampaignRepository campaigns, ReplyRepository replies, Entities entities,
+    public OutboundMail(AppProperties props, MailConfigService mail, LeadRepository leads, CampaignRepository campaigns, ReplyRepository replies, Entities entities,
                         SuppressionService suppression, ActivityService activity, MetaService meta, Drafter drafter,
                         DemoReplies demoReplies, AuditService audit) {
         this.props = props;
+        this.mail = mail;
         this.leads = leads;
         this.campaigns = campaigns;
         this.replies = replies;
@@ -72,10 +75,22 @@ public class OutboundMail {
         this.drafter = drafter;
         this.demoReplies = demoReplies;
         this.audit = audit;
-        this.smtp = props.smtpEnabled() ? buildSender(props.smtp()) : null;
     }
 
-    private static JavaMailSenderImpl buildSender(AppProperties.Smtp cfg) {
+    /** The mail sender for the current settings, or null in dry-run mode. Rebuilt when the settings change. */
+    private JavaMailSenderImpl sender() {
+        MailConfigService.Effective e = mail.current();
+        if (!e.smtpEnabled()) return null;
+        JavaMailSenderImpl s = built;
+        if (s == null || !e.smtp().equals(builtFor)) {
+            s = buildSender(e.smtp());
+            built = s;
+            builtFor = e.smtp();
+        }
+        return s;
+    }
+
+    public static JavaMailSenderImpl buildSender(AppProperties.Smtp cfg) {
         JavaMailSenderImpl s = new JavaMailSenderImpl();
         s.setHost(cfg.host());
         s.setPort(cfg.port());
@@ -92,11 +107,18 @@ public class OutboundMail {
         return s;
     }
 
-    public boolean live() { return smtp != null; }
+    public boolean live() { return sender() != null; }
 
     private static String escape(String s) { return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"); }
 
     public record Delivery(String messageId, boolean dryRun) {}
+
+    /** From address: the one set in the server settings (SMTP_FROM / SMTP_USER); campaigns made before that kept their own. */
+    private String senderAddress(CampaignEntity c) {
+        String set = mail.current().fromAddress();
+        if (!Text.blank(set)) return set;
+        return c.sender != null && !Text.blank(c.sender.email()) ? c.sender.email() : "noreply@kitepost.local";
+    }
 
     private Delivery deliver(String fromName, String fromAddress, String to, String subject, String text, String inReplyTo, String references, String trackLeadId)
             throws MessagingException, UnsupportedEncodingException {
@@ -104,13 +126,15 @@ public class OutboundMail {
         byte[] b = new byte[8];
         RANDOM.nextBytes(b);
         String messageId = "<kp." + HexFormat.of().formatHex(b) + "@" + domain + ">";
+        JavaMailSenderImpl smtp = sender();
         if (smtp == null) return new Delivery(messageId, true);
         Session session = smtp.getSession();
         MimeMessage msg = new MimeMessage(session) {
             @Override protected void updateMessageID() throws MessagingException { setHeader("Message-ID", messageId); } // keep our ID for reply matching
         };
         msg.setFrom(new InternetAddress(fromAddress, fromName, StandardCharsets.UTF_8.name()));
-        msg.setReplyTo(new InternetAddress[]{new InternetAddress(fromAddress)});
+        String replyTo = Text.blank(mail.current().replyAddress()) ? fromAddress : mail.current().replyAddress();
+        msg.setReplyTo(new InternetAddress[]{new InternetAddress(replyTo)});
         msg.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(to, true));
         msg.setSubject(subject.replaceAll("[\\r\\n]+", " "), StandardCharsets.UTF_8.name());   // no header injection
         String base = props.trackingBase();
@@ -130,7 +154,7 @@ public class OutboundMail {
         } else {
             msg.setText(text, StandardCharsets.UTF_8.name());
         }
-        msg.setHeader("List-Unsubscribe", "<mailto:" + fromAddress + "?subject=unsubscribe>");
+        msg.setHeader("List-Unsubscribe", "<mailto:" + replyTo + "?subject=unsubscribe>");
         if (inReplyTo != null) msg.setHeader("In-Reply-To", inReplyTo);
         if (references != null && !references.isBlank()) msg.setHeader("References", references);
         smtp.send(msg);
@@ -147,7 +171,7 @@ public class OutboundMail {
         }
         String text = lead.draft.body() + drafter.footer(c, lead);
         try {
-            Delivery d = deliver(c.sender.name(), c.sender.email(), lead.email, lead.draft.subject(), text, null, null, lead.id);
+            Delivery d = deliver(c.sender.name(), senderAddress(c), lead.email, lead.draft.subject(), text, null, null, lead.id);
             SentInfo sent = new SentInfo(Ids.now().toString(), d.messageId(), d.dryRun(), lead.email, lead.draft.subject(), text);
             LeadEntity saved = entities.patchLead(lead.id, l -> {
                 l.sent = sent;
@@ -192,7 +216,7 @@ public class OutboundMail {
         String subject = reply.subject != null && reply.subject.toLowerCase(Locale.ROOT).startsWith("re:") ? reply.subject
                 : "Re: " + Objects.toString(reply.subject, lead.draft == null ? "" : lead.draft.subject());
         String refs = String.join(" ", List.of(Objects.toString(lead.sentMessageId, ""), Objects.toString(reply.messageId, ""))).trim();
-        Delivery d = deliver(c.sender.name(), c.sender.email(), reply.fromAddress, subject, body, reply.messageId, refs, null);
+        Delivery d = deliver(c.sender.name(), senderAddress(c), reply.fromAddress, subject, body, reply.messageId, refs, null);
         reply.answers = new ArrayList<>(reply.answers == null ? List.of() : reply.answers);
         reply.answers.add(new Answer(Ids.now().toString(), body, d.messageId(), d.dryRun()));
         reply.handled = true;

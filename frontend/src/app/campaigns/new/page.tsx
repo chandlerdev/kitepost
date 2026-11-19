@@ -20,7 +20,7 @@ const EXAMPLE = {
   description: "We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone. We do not want dental suppliers, labs or other software companies."
 };
 const SENDER_FIELDS: [keyof Sender, string, string, boolean][] = [
-  ["name", "Full name", "text", true], ["company", "Company", "text", true], ["email", "Email (replies come here)", "email", true],
+  ["name", "Full name", "text", true], ["company", "Company", "text", true],
   ["role", "Position or role", "text", false], ["website", "Website", "url", false], ["phone", "Phone", "tel", false]
 ];
 
@@ -61,7 +61,6 @@ export default function NewCampaignPage() {
     if (step === 3) {
       if (!f.sender.name.trim()) er.name = "Add the name that signs your emails.";
       if (!f.sender.company.trim()) er.company = "Add your company name.";
-      if (!/^\S+@\S+\.\S+$/.test(f.sender.email)) er.email = "Enter an email address where replies can reach you.";
       if (usOn && !f.sender.address.trim()) er.address = "Add your postal address. It's required for emails to US companies.";
     }
     setErrors(er);
@@ -177,7 +176,7 @@ export default function NewCampaignPage() {
           </>}
 
           {step === 3 && <>
-            <div><h2>Who is sending?</h2><p className="muted">Used to sign each email. Replies go to this address.</p></div>
+            <div><h2>Who is sending?</h2><p className="muted">Used to sign each email.{status.mode.fromAddress ? <> Emails are sent from <b className="mono">{status.mode.fromAddress}</b>{status.mode.replyAddress && status.mode.replyAddress !== status.mode.fromAddress ? <> and replies go to <b className="mono">{status.mode.replyAddress}</b></> : <>, and replies come back to the same mailbox</>}. These are set on the server (Settings).</> : <> The sending and reply mailboxes are set on the server (Settings); none is set yet, so emails are only recorded.</>}</p></div>
             <div className="grid2">{SENDER_FIELDS.map(([k, label, type, req]) => (
               <div key={k} className="field"><label htmlFor={`s-${k}`}>{label}{req ? " *" : ""}</label><input type={type} id={`s-${k}`} value={f.sender[k]} onChange={e => setSender(k, e.target.value)} />{errors[k] && <span className="err">{errors[k]}</span>}</div>
             ))}</div>
@@ -202,7 +201,7 @@ export default function NewCampaignPage() {
               <dt>Countries</dt><dd>{f.countries.map(c => countryName(c) + (f.regions[c]?.length ? ` (${regionSummary(f.regions[c], ref.regions[c]?.label || "regions")})` : "")).join(" → ")}</dd>
               <dt>Limits</dt><dd>Stop at {fmt(f.targetCustomers)} customers or {fmt(f.maxSites)} websites</dd>
               <dt>Emails</dt><dd>{f.emailLanguage === "local" ? "In each company's language" : "In English"} · {f.tone} tone</dd>
-              <dt>Sender</dt><dd>{f.sender.name}, {f.sender.company} · <span className="mono">{f.sender.email}</span></dd>
+              <dt>Sender</dt><dd>{f.sender.name}, {f.sender.company}{status.mode.fromAddress && <> · <span className="mono">{status.mode.fromAddress}</span></>}</dd>
               <dt>Sending</dt><dd>{status.mode.email === "smtp" ? `Live SMTP, one email every ${status.mode.sendIntervalSeconds}s after approval` : "Dry run: approved emails are recorded, not sent"}</dd>
             </dl>
           </>}

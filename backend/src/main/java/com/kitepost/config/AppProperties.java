@@ -34,7 +34,7 @@ public record AppProperties(
 
     public record Fetch(int timeoutMs, String userAgent, int concurrency, boolean respectRobots) {}
 
-    public record Smtp(String host, int port, boolean ssl, String user, String pass) {}
+    public record Smtp(String host, int port, boolean ssl, String user, String pass, String from) {}
 
     public record Imap(String host, int port, boolean ssl, String user, String pass, String mailbox, int pollSeconds) {
         public boolean enabled() { return has(host); }
@@ -43,13 +43,11 @@ public record AppProperties(
     public record Sending(boolean dryRun, int intervalSeconds, int dailyLimit) {}
 
     public record Security(String adminEmail, String adminPassword, boolean cookieSecure,
-                           int loginMaxFailures, int lockoutMinutes, int loginAttemptsPerMinute, String allowedOrigins) {}
+                           int loginMaxFailures, int lockoutMinutes, int loginAttemptsPerMinute, String allowedOrigins,
+                           String encryptionKey) {}
 
     /** The public address of this app (https://example.com), used for the open-tracking image. Blank = no tracking. */
     public String trackingBase() { return has(publicUrl) ? publicUrl.trim().replaceAll("/+$", "") : null; }
-
-    /** True when real SMTP sending is switched on. */
-    public boolean smtpEnabled() { return has(smtp.host()) && !sending.dryRun(); }
 
     public static boolean has(String s) { return s != null && !s.isBlank(); }
 }

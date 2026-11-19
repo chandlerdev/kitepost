@@ -49,9 +49,27 @@ public final class Dtos {
 
     /* ---------- status ---------- */
     public record Mode(String database, String search, String ai, String aiModel, String email, String replies,
-                       int dailySendLimit, int sendIntervalSeconds) {}
+                       int dailySendLimit, int sendIntervalSeconds, String fromAddress, String replyAddress) {}
 
     public record Status(Mode mode, long sentToday, long reviewCount, long unreadReplies, long unreadOpens) {}
+
+    /* ---------- mail configuration (Settings) ---------- */
+    /** What the form sends. A blank or missing password means "keep the one that is saved". */
+    public record MailIn(@Size(max = 255) String smtpHost, @Min(1) @Max(65535) Integer smtpPort, Boolean smtpSsl,
+                         @Size(max = 320) String smtpUser, @Size(max = 500) String smtpPass,
+                         @Size(max = 320) String fromAddress, Boolean sendReal,
+                         @Size(max = 255) String imapHost, @Min(1) @Max(65535) Integer imapPort, Boolean imapSsl,
+                         @Size(max = 320) String imapUser, @Size(max = 500) String imapPass,
+                         @Size(max = 200) String imapMailbox) {}
+
+    /** What the form shows. Passwords are never included, only whether one is saved. */
+    public record MailOut(String source, boolean encryptionReady, boolean passwordProblem,
+                          String smtpHost, int smtpPort, boolean smtpSsl, String smtpUser, boolean smtpPassSet,
+                          String fromAddress, boolean sendReal,
+                          String imapHost, int imapPort, boolean imapSsl, String imapUser, boolean imapPassSet, String imapMailbox,
+                          String effectiveFrom, String effectiveReply, Instant updatedAt, String updatedBy) {}
+
+    public record MailTestOut(boolean ok, String message) {}
 
     /* ---------- campaigns ---------- */
     public record StrategyRequest(@NotBlank(message = "Add a campaign name.") @Size(max = 300) String name,
@@ -75,11 +93,11 @@ public final class Dtos {
 
     public record SenderIn(@NotBlank(message = "Add the sender's name.") @Size(max = 200) String name,
                            @NotBlank(message = "Add your company name.") @Size(max = 200) String company,
-                           @NotBlank @Email(message = "Add a valid sender email address.") @Size(max = 320) String email,
+                           @Email(message = "Add a valid sender email address.") @Size(max = 320) String email,   // optional: the From / reply addresses come from the server settings
                            @Size(max = 300) String website, @Size(max = 120) String role, @Size(max = 60) String phone,
                            @Size(max = 300) String address) {
         public Sender toSender() {
-            return new Sender(name.trim(), company.trim(), email.trim(), nz(website), nz(role), nz(phone), nz(address));
+            return new Sender(name.trim(), company.trim(), email == null ? "" : email.trim(), nz(website), nz(role), nz(phone), nz(address));
         }
     }
 

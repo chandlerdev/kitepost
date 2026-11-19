@@ -25,7 +25,7 @@ jobs:
       DATABASE_USER: kitepost
       DATABASE_PASSWORD: kitepost
       ADMIN_EMAIL: ci-admin@kitepost.local
-      ADMIN_PASSWORD: Ci-Admin-Pass-2026!
+      ADMIN_PASSWORD: Zq7-Pipeline-Check-2026!
       COOKIE_SECURE: "false"
       SEED_SAMPLE_DATA: "true"
     defaults: { run: { working-directory: backend } }
@@ -52,7 +52,7 @@ jobs:
           # A POST without the CSRF header is refused
           test "$(curl -s -o /dev/null -w '%{http_code}' -b $J -H 'content-type: application/json' -d '{}' localhost:8080/api/auth/login)" != 200
           curl -fs -c $J -b $J -H "X-XSRF-TOKEN: $T" -H 'content-type: application/json' \
-            -d '{"email":"ci-admin@kitepost.local","password":"Ci-Admin-Pass-2026!"}' localhost:8080/api/auth/login
+            -d '{"email":"ci-admin@kitepost.local","password":"Zq7-Pipeline-Check-2026!"}' localhost:8080/api/auth/login
           curl -fs -c $J -b $J localhost:8080/api/auth/csrf > /dev/null   # fresh token after sign-in
           T=$(awk '$6=="KITEPOST-XSRF"{print $7}' $J)
           curl -fs -b $J localhost:8080/api/auth/me | grep -q ADMIN

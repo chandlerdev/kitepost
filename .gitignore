@@ -1,0 +1,21 @@
+.env
+backend/target/
+frontend/node_modules/
+frontend/.next/
+frontend/tsconfig.tsbuildinfo
+*.log
+.env.*
+!.env.example
+backend/.env
+backend/target/
+frontend/.next/
+node_modules/
+kitepost.sql
+database/
+logs/
+*.zip
+# release deploy: these live on the server only
+/deploy/deploy.conf
+/deploy/ecosystem.config.js
+/kitepost_backend/
+/kitepost_frontend/

@@ -1,0 +1,10 @@
+package com.kitepost.repository;
+
+import com.kitepost.entity.AuditEvent;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface AuditRepository extends JpaRepository<AuditEvent, String> {
+    List<AuditEvent> findAllByOrderByAtDesc(Pageable page);
+}

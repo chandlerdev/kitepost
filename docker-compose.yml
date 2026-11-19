@@ -1,0 +1,72 @@
+# Kitepost: Spring Boot API + Next.js web app + PostgreSQL or MySQL.
+#   PostgreSQL:  docker compose --profile postgres up --build
+#   MySQL:       DATABASE_URL=jdbc:mysql://mysql:3306/kitepost docker compose --profile mysql up --build
+# Open http://localhost:3000. Copy .env.example to .env first.
+services:
+  postgres:
+    profiles: ["postgres"]
+    image: postgres:16
+    environment:
+      POSTGRES_DB: kitepost
+      POSTGRES_USER: ${DATABASE_USER:-kitepost}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:?set DATABASE_PASSWORD in .env}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USER:-kitepost} -d kitepost"]
+      interval: 5s
+      retries: 20
+
+  mysql:
+    profiles: ["mysql"]
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: kitepost
+      MYSQL_USER: ${DATABASE_USER:-kitepost}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD:?set DATABASE_PASSWORD in .env}
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    volumes: [mysqldata:/var/lib/mysql]
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 --silent"]
+      interval: 5s
+      retries: 30
+
+  backend-postgres: &backend
+    profiles: ["postgres"]
+    build: ./backend
+    env_file: .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-jdbc:postgresql://postgres:5432/kitepost}
+    depends_on:
+      postgres: { condition: service_healthy }
+    networks:
+      default:
+        aliases: [backend]
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    restart: unless-stopped
+    # Not published: only the web app talks to the API.
+
+  backend-mysql:
+    <<: *backend
+    profiles: ["mysql"]
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-jdbc:mysql://mysql:3306/kitepost}
+    depends_on:
+      mysql: { condition: service_healthy }
+
+  frontend:
+    profiles: ["postgres", "mysql"]
+    build:
+      context: ./frontend
+      args: { BACKEND_URL: http://backend:8080 }
+    ports: ["3000:3000"]
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: ["no-new-privileges:true"]
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  mysqldata:

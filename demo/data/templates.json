@@ -1,0 +1,109 @@
+{
+  "outreach": {
+    "en": {
+      "friendly": {
+        "subject": "{senderCompany} × {company}",
+        "body": "Hi {company} team,\n\nI'm {sender} from {senderCompany}. {pitch}\n\nI came across {domain} and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\n{sender}\n{role}{senderCompany}"
+      },
+      "formal": {
+        "subject": "Introduction: {senderCompany}",
+        "body": "Dear {company} team,\n\nMy name is {sender} and I represent {senderCompany}. {pitch}\n\nHaving looked at {domain}, I believe our offer could be relevant to you. May I send you more information or arrange a brief call?\n\nKind regards,\n{sender}\n{role}{senderCompany}"
+      },
+      "direct": {
+        "subject": "Quick question for {company}",
+        "body": "Hello {company},\n\n{pitch}\n\nIs this relevant for you? A one-line reply is enough.\n\n{sender}\n{role}{senderCompany}"
+      }
+    },
+    "de": {
+      "subject": "{senderCompany} × {company}",
+      "body": "Guten Tag {company}-Team,\n\nmein Name ist {sender} von {senderCompany}. {pitch}\n\nIch bin auf {domain} gestoßen und denke, dass es gut passt. Hätten Sie nächste Woche Zeit für ein kurzes Gespräch?\n\nViele Grüße\n{sender}\n{role}{senderCompany}"
+    },
+    "fr": {
+      "subject": "{senderCompany} × {company}",
+      "body": "Bonjour l'équipe {company},\n\nJe suis {sender}, de {senderCompany}. {pitch}\n\nEn découvrant {domain}, il me semble que cela pourrait vous intéresser. Seriez-vous disponible pour un court échange la semaine prochaine ?\n\nCordialement,\n{sender}\n{role}{senderCompany}"
+    },
+    "nl": {
+      "subject": "{senderCompany} × {company}",
+      "body": "Beste {company},\n\nIk ben {sender} van {senderCompany}. {pitch}\n\nIk kwam {domain} tegen en denk dat het goed past. Heeft u volgende week tijd voor een kort gesprek?\n\nMet vriendelijke groet,\n{sender}\n{role}{senderCompany}"
+    },
+    "es": {
+      "subject": "{senderCompany} × {company}",
+      "body": "Hola equipo de {company}:\n\nSoy {sender}, de {senderCompany}. {pitch}\n\nHe visto {domain} y creo que encaja bien. ¿Tendría unos minutos la próxima semana para una breve llamada?\n\nSaludos cordiales,\n{sender}\n{role}{senderCompany}"
+    },
+    "pt": {
+      "subject": "{senderCompany} × {company}",
+      "body": "Olá equipa {company},\n\nSou {sender}, da {senderCompany}. {pitch}\n\nVi o site {domain} e parece-me uma boa combinação. Teria disponibilidade para uma breve chamada na próxima semana?\n\nCumprimentos,\n{sender}\n{role}{senderCompany}"
+    },
+    "it": {
+      "subject": "{senderCompany} × {company}",
+      "body": "Buongiorno team {company},\n\nsono {sender} di {senderCompany}. {pitch}\n\nHo visto {domain} e credo che ci sia una buona corrispondenza. Avreste tempo per una breve chiamata la prossima settimana?\n\nCordiali saluti,\n{sender}\n{role}{senderCompany}"
+    },
+    "pl": {
+      "subject": "{senderCompany} × {company}",
+      "body": "Dzień dobry, zespół {company},\n\nnazywam się {sender} z {senderCompany}. {pitch}\n\nTrafiłem na {domain} i wydaje mi się, że to dobre dopasowanie. Czy znajdą Państwo chwilę na krótką rozmowę w przyszłym tygodniu?\n\nPozdrawiam serdecznie,\n{sender}\n{role}{senderCompany}"
+    }
+  },
+  "footer": {
+    "en": "You received this one-time message because {company} matches what we offer. Reply \"unsubscribe\" and we won't contact you again.",
+    "de": "Sie erhalten diese einmalige Nachricht, weil {company} zu unserem Angebot passt. Antworten Sie mit \"abmelden\", dann kontaktieren wir Sie nicht mehr.",
+    "fr": "Vous recevez ce message unique car {company} correspond à notre offre. Répondez « désinscrire » et nous ne vous contacterons plus.",
+    "nl": "U ontvangt dit eenmalige bericht omdat {company} past bij ons aanbod. Antwoord \"afmelden\" en we nemen geen contact meer op.",
+    "es": "Recibe este mensaje único porque {company} encaja con nuestra oferta. Responda \"baja\" y no volveremos a contactarle.",
+    "pt": "Recebe esta mensagem única porque a {company} corresponde à nossa oferta. Responda \"cancelar\" e não voltaremos a contactar.",
+    "it": "Ricevete questo messaggio unico perché {company} corrisponde alla nostra offerta. Rispondete \"cancella\" e non vi contatteremo più.",
+    "pl": "Otrzymują Państwo tę jednorazową wiadomość, ponieważ {company} pasuje do naszej oferty. Proszę odpisać \"wypisz\", a nie będziemy się więcej kontaktować."
+  },
+  "replyAnswer": {
+    "en": "Hi {first},\n\nThank you for your reply. I'm glad to help: I'll send the details you asked for today. Would a 20-minute call next week suit you? Let me know a time that works.\n\nBest regards,\n{sender}\n{senderCompany}",
+    "de": "Guten Tag {first},\n\nvielen Dank für Ihre Antwort. Die gewünschten Informationen schicke ich Ihnen noch heute. Passt Ihnen nächste Woche ein kurzes Gespräch von 20 Minuten?\n\nViele Grüße\n{sender}\n{senderCompany}",
+    "fr": "Bonjour {first},\n\nMerci pour votre réponse. Je vous envoie aujourd'hui les informations demandées. Un échange de 20 minutes la semaine prochaine vous conviendrait-il ?\n\nCordialement,\n{sender}\n{senderCompany}",
+    "nl": "Beste {first},\n\nDank voor uw reactie. Ik stuur u vandaag nog de gevraagde informatie. Past een kort gesprek van 20 minuten volgende week?\n\nMet vriendelijke groet,\n{sender}\n{senderCompany}",
+    "es": "Hola {first}:\n\nGracias por su respuesta. Hoy mismo le envío la información solicitada. ¿Le vendría bien una llamada de 20 minutos la próxima semana?\n\nSaludos cordiales,\n{sender}\n{senderCompany}"
+  },
+  "simulatedReplies": {
+    "interested": {
+      "en": "Hi {first},\n\nThanks for your email, the timing is good. Could you send pricing and a short overview? A call next Tuesday or Thursday afternoon would also work for us.\n\nBest regards,\n{name}\n{company}",
+      "de": "Guten Tag {first},\n\ndanke für Ihre Nachricht, das Timing passt gut. Könnten Sie uns Preise und eine kurze Übersicht schicken? Ein Telefonat nächsten Dienstag oder Donnerstag am Nachmittag wäre auch möglich.\n\nViele Grüße\n{name}\n{company}",
+      "fr": "Bonjour {first},\n\nMerci pour votre e-mail, le moment est bien choisi. Pourriez-vous nous envoyer vos tarifs et une courte présentation ? Un appel mardi ou jeudi après-midi prochain nous conviendrait aussi.\n\nCordialement,\n{name}\n{company}",
+      "nl": "Beste {first},\n\nDank voor uw e-mail, de timing is goed. Kunt u prijzen en een kort overzicht sturen? Een gesprek volgende dinsdag- of donderdagmiddag kan ook.\n\nMet vriendelijke groet,\n{name}\n{company}",
+      "es": "Hola {first}:\n\nGracias por su correo, el momento es oportuno. ¿Podría enviarnos precios y una breve presentación? Una llamada el próximo martes o jueves por la tarde también nos vendría bien.\n\nSaludos,\n{name}\n{company}"
+    },
+    "question": {
+      "en": "Hello {first},\n\nWhat are your delivery times to {country}, and is there a minimum order quantity?\n\nThanks,\n{name}\n{company}"
+    },
+    "not_interested": {
+      "en": "Hi {first},\n\nThanks, but we're not interested at the moment.\n\n{name}"
+    },
+    "out_of_office": {
+      "en": "Thank you for your message. I'm out of the office until Monday and will reply when I'm back.\n\n{name}"
+    }
+  },
+  "simulatedFirstNames": {
+    "en": [
+      "Olivia",
+      "James",
+      "Emma",
+      "Daniel"
+    ],
+    "de": [
+      "Markus",
+      "Sabine",
+      "Jens"
+    ],
+    "fr": [
+      "Claire",
+      "Julien",
+      "Élodie"
+    ],
+    "nl": [
+      "Joost",
+      "Sanne",
+      "Pieter"
+    ],
+    "es": [
+      "Lucía",
+      "Javier",
+      "Marta"
+    ]
+  }
+}

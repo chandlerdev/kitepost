@@ -1,0 +1,55 @@
+// Kitepost's backend and web app, as PM2 runs them from a release.
+// Copy it as deploy/ecosystem.config.js and check the values marked <- against `ss -ltn` and the Apache config.
+//
+//   cp deploy/ecosystem.config.js.example deploy/ecosystem.config.js
+
+const fs = require('fs');
+
+const DIR = '/var/www/Vhost/jjlltdnext.desss-portfolio.com';   // <- the site's folder
+
+const BACKEND_PORT = 8087;    // <- free port for the API (Apache: /kitepost/api)
+const FRONTEND_PORT = 3016;   // <- free port for the web app (Apache: /kitepost)
+
+// Spring Boot does not read .env files by itself, so the settings in kitepost_backend/.env
+// are loaded here and handed to the backend as environment variables.
+function loadEnv(file) {
+  const out = {};
+  for (const raw of fs.readFileSync(file, 'utf8').split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line || line.startsWith('#')) continue;
+    const i = line.indexOf('=');
+    if (i < 1) continue;
+    let value = line.slice(i + 1).trim();
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) value = value.slice(1, -1);
+    out[line.slice(0, i).trim()] = value;
+  }
+  return out;
+}
+
+module.exports = {
+  apps: [
+    {
+      name: 'kitepost-backend',            // <- BACKEND_NAME in deploy.conf
+      cwd: `${DIR}/kitepost_backend`,
+      script: 'java',
+      args: ['-Xmx512m', '-jar', 'kitepost-backend.jar'],
+      env: {
+        ...loadEnv(`${DIR}/kitepost_backend/.env`),
+        PORT: String(BACKEND_PORT),
+      },
+    },
+    {
+      name: 'kitepost-frontend',           // <- FRONTEND_NAME in deploy.conf
+      cwd: `${DIR}/kitepost_frontend`,
+      script: 'server.js',
+      max_memory_restart: '400M',
+      env: {
+        NODE_ENV: 'production',
+        PORT: String(FRONTEND_PORT),
+        // Set here because the shell's own HOSTNAME (the machine's name) would otherwise
+        // be the address the server listens on.
+        HOSTNAME: '127.0.0.1',
+      },
+    },
+  ],
+};

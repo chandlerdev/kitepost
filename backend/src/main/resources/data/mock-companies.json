@@ -1,0 +1,386 @@
+{
+  "surnames": {
+    "en": [
+      "Holland",
+      "Clarke",
+      "Turner",
+      "Hughes",
+      "Bennett",
+      "Carter",
+      "Foster",
+      "Morgan",
+      "Reed",
+      "Walsh",
+      "Parker",
+      "Hayes"
+    ],
+    "de": [
+      "Müller",
+      "Weber",
+      "Schmidt",
+      "Hoffmann",
+      "Becker",
+      "Wagner",
+      "Krause",
+      "Fischer",
+      "Richter",
+      "Wolf"
+    ],
+    "fr": [
+      "Dubois",
+      "Roux",
+      "Lefèvre",
+      "Moreau",
+      "Girard",
+      "Laurent",
+      "Fournier",
+      "Mercier"
+    ],
+    "nl": [
+      "de Vries",
+      "Jansen",
+      "Bakker",
+      "Visser",
+      "Smit",
+      "Mulder",
+      "de Boer"
+    ],
+    "es": [
+      "García",
+      "Navarro",
+      "Ruiz",
+      "Torres",
+      "Romero",
+      "Herrera"
+    ],
+    "pt": [
+      "Silva",
+      "Santos",
+      "Ferreira",
+      "Costa",
+      "Oliveira"
+    ],
+    "it": [
+      "Rossi",
+      "Bianchi",
+      "Ferrari",
+      "Colombo",
+      "Ricci"
+    ],
+    "pl": [
+      "Nowak",
+      "Kowalski",
+      "Zieliński",
+      "Wójcik"
+    ],
+    "sv": [
+      "Lindqvist",
+      "Berg",
+      "Holm",
+      "Sandberg"
+    ],
+    "da": [
+      "Jensen",
+      "Nielsen",
+      "Larsen"
+    ],
+    "no": [
+      "Hansen",
+      "Johansen",
+      "Berg"
+    ],
+    "fi": [
+      "Virtanen",
+      "Korhonen",
+      "Mäkinen"
+    ],
+    "ja": [
+      "Tanaka",
+      "Suzuki",
+      "Sato"
+    ]
+  },
+  "suffixes": {
+    "en": [
+      "Group",
+      "Supply Co.",
+      "Industries",
+      "Trading",
+      "Solutions",
+      "& Sons",
+      "Partners"
+    ],
+    "de": [
+      "GmbH",
+      "Handel GmbH",
+      "Technik",
+      "& Co. KG",
+      "Gruppe"
+    ],
+    "fr": [
+      "SARL",
+      "Distribution",
+      "Industrie",
+      "& Fils",
+      "Groupe"
+    ],
+    "nl": [
+      "B.V.",
+      "Groep",
+      "Handel",
+      "Techniek"
+    ],
+    "es": [
+      "S.L.",
+      "Distribuciones",
+      "Grupo",
+      "Industrial"
+    ],
+    "pt": [
+      "Lda.",
+      "Distribuição",
+      "Grupo"
+    ],
+    "it": [
+      "S.r.l.",
+      "Distribuzione",
+      "Gruppo"
+    ],
+    "pl": [
+      "Sp. z o.o.",
+      "Grupa",
+      "Handel"
+    ],
+    "sv": [
+      "AB",
+      "Gruppen"
+    ],
+    "da": [
+      "ApS",
+      "A/S"
+    ],
+    "no": [
+      "AS",
+      "Gruppen"
+    ],
+    "fi": [
+      "Oy",
+      "Group"
+    ],
+    "ja": [
+      "Co., Ltd.",
+      "KK"
+    ]
+  },
+  "cities": {
+    "US": [
+      "Chicago",
+      "Houston",
+      "Atlanta",
+      "Denver",
+      "Columbus",
+      "Phoenix",
+      "Charlotte",
+      "Seattle",
+      "Dallas",
+      "Minneapolis"
+    ],
+    "CA": [
+      "Toronto",
+      "Calgary",
+      "Montréal",
+      "Vancouver"
+    ],
+    "MX": [
+      "Monterrey",
+      "Guadalajara",
+      "Puebla"
+    ],
+    "BR": [
+      "São Paulo",
+      "Curitiba",
+      "Campinas"
+    ],
+    "GB": [
+      "Manchester",
+      "Leeds",
+      "Birmingham",
+      "Bristol"
+    ],
+    "IE": [
+      "Dublin",
+      "Cork",
+      "Galway"
+    ],
+    "DE": [
+      "Hamburg",
+      "Köln",
+      "Stuttgart",
+      "Leipzig",
+      "Nürnberg"
+    ],
+    "AT": [
+      "Wien",
+      "Linz",
+      "Graz"
+    ],
+    "CH": [
+      "Zürich",
+      "Basel",
+      "Bern"
+    ],
+    "FR": [
+      "Lyon",
+      "Lille",
+      "Nantes",
+      "Toulouse"
+    ],
+    "BE": [
+      "Antwerpen",
+      "Gent",
+      "Brussel"
+    ],
+    "NL": [
+      "Utrecht",
+      "Eindhoven",
+      "Rotterdam"
+    ],
+    "ES": [
+      "Valencia",
+      "Bilbao",
+      "Zaragoza"
+    ],
+    "PT": [
+      "Porto",
+      "Braga"
+    ],
+    "IT": [
+      "Milano",
+      "Bologna",
+      "Torino"
+    ],
+    "PL": [
+      "Poznań",
+      "Wrocław",
+      "Łódź"
+    ],
+    "SE": [
+      "Göteborg",
+      "Malmö"
+    ],
+    "DK": [
+      "Aarhus",
+      "Odense"
+    ],
+    "NO": [
+      "Bergen",
+      "Stavanger"
+    ],
+    "FI": [
+      "Tampere",
+      "Turku"
+    ],
+    "AE": [
+      "Dubai",
+      "Sharjah"
+    ],
+    "SA": [
+      "Riyadh",
+      "Jeddah"
+    ],
+    "ZA": [
+      "Johannesburg",
+      "Durban"
+    ],
+    "IN": [
+      "Mumbai",
+      "Bengaluru",
+      "Pune",
+      "Chennai",
+      "Hyderabad",
+      "Ahmedabad",
+      "New Delhi",
+      "Kolkata"
+    ],
+    "SG": [
+      "Singapore"
+    ],
+    "AU": [
+      "Melbourne",
+      "Brisbane",
+      "Perth"
+    ],
+    "NZ": [
+      "Auckland",
+      "Christchurch"
+    ],
+    "JP": [
+      "Osaka",
+      "Nagoya"
+    ]
+  },
+  "blockedDomains": [
+    "linkedin.com",
+    "facebook.com",
+    "instagram.com",
+    "twitter.com",
+    "x.com",
+    "youtube.com",
+    "tiktok.com",
+    "pinterest.com",
+    "wikipedia.org",
+    "amazon.com",
+    "amazon.de",
+    "ebay.com",
+    "alibaba.com",
+    "aliexpress.com",
+    "indiamart.com",
+    "yelp.com",
+    "yellowpages.com",
+    "bbb.org",
+    "glassdoor.com",
+    "indeed.com",
+    "crunchbase.com",
+    "zoominfo.com",
+    "dnb.com",
+    "kompass.com",
+    "europages.com",
+    "thomasnet.com",
+    "made-in-china.com",
+    "gelbeseiten.de",
+    "pagesjaunes.fr",
+    "reddit.com",
+    "quora.com",
+    "medium.com",
+    "github.com",
+    "google.com",
+    "apple.com",
+    "microsoft.com"
+  ],
+  "surnamesByCountry": {
+    "IN": [
+      "Sharma",
+      "Patel",
+      "Iyer",
+      "Reddy",
+      "Gupta",
+      "Mehta",
+      "Rao",
+      "Nair",
+      "Kapoor",
+      "Desai",
+      "Banerjee",
+      "Menon"
+    ]
+  },
+  "suffixesByCountry": {
+    "IN": [
+      "Pvt. Ltd.",
+      "Enterprises",
+      "Industries",
+      "Technologies",
+      "Solutions",
+      "& Co."
+    ]
+  }
+}

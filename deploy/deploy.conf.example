@@ -1,0 +1,15 @@
+# deploy.sh's settings for Kitepost on this server. Copy it as deploy/deploy.conf:
+#
+#   cp deploy/deploy.conf.example deploy/deploy.conf
+
+# The GitHub repository the releases are downloaded from.
+REPO="chandlerdev/kitepost"
+
+# PM2 process names (must match deploy/ecosystem.config.js; `pm2 ls` shows them).
+BACKEND_NAME="kitepost-backend"
+FRONTEND_NAME="kitepost-frontend"
+
+# Folders inside the site folder, and the jar's file name.
+BACKEND_DIR="kitepost_backend"
+FRONTEND_DIR="kitepost_frontend"
+BACKEND_JAR="kitepost-backend.jar"

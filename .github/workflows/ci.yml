@@ -1,0 +1,80 @@
+name: ci
+on: [push, pull_request]
+permissions: { contents: read }
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        db: [postgres, mysql]
+    services:
+      postgres:
+        image: postgres:16
+        env: { POSTGRES_DB: kitepost, POSTGRES_USER: kitepost, POSTGRES_PASSWORD: kitepost }
+        ports: ["5432:5432"]
+        options: --health-cmd "pg_isready -U kitepost" --health-interval 5s --health-retries 20
+      mysql:
+        image: mysql:8.4
+        env: { MYSQL_DATABASE: kitepost, MYSQL_USER: kitepost, MYSQL_PASSWORD: kitepost, MYSQL_RANDOM_ROOT_PASSWORD: "yes" }
+        ports: ["3306:3306"]
+        options: --health-cmd "mysqladmin ping -h 127.0.0.1 --silent" --health-interval 5s --health-retries 30
+    env:
+      DATABASE_URL: ${{ matrix.db == 'postgres' && 'jdbc:postgresql://localhost:5432/kitepost' || 'jdbc:mysql://localhost:3306/kitepost' }}
+      DATABASE_USER: kitepost
+      DATABASE_PASSWORD: kitepost
+      ADMIN_EMAIL: ci-admin@kitepost.local
+      ADMIN_PASSWORD: Ci-Admin-Pass-2026!
+      COOKIE_SECURE: "false"
+      SEED_SAMPLE_DATA: "true"
+    defaults: { run: { working-directory: backend } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "21", cache: maven }
+      - name: Build and unit tests
+        run: mvn -B verify
+      - name: Start the API
+        run: |
+          java -jar target/kitepost-backend.jar > app.log 2>&1 &
+          for i in $(seq 1 60); do curl -fs localhost:8080/actuator/health && break; sleep 2; done
+          curl -fs localhost:8080/actuator/health | grep -q UP
+      - name: Smoke test (security + core flow)
+        run: |
+          set -e
+          J=jar.txt
+          # Unauthenticated calls are refused
+          test "$(curl -s -o /dev/null -w '%{http_code}' localhost:8080/api/campaigns)" = 401
+          # CSRF token, then sign in
+          curl -fs -c $J -b $J localhost:8080/api/auth/csrf > /dev/null
+          T=$(awk '$6=="KITEPOST-XSRF"{print $7}' $J)
+          # A POST without the CSRF header is refused
+          test "$(curl -s -o /dev/null -w '%{http_code}' -b $J -H 'content-type: application/json' -d '{}' localhost:8080/api/auth/login)" != 200
+          curl -fs -c $J -b $J -H "X-XSRF-TOKEN: $T" -H 'content-type: application/json' \
+            -d '{"email":"ci-admin@kitepost.local","password":"Ci-Admin-Pass-2026!"}' localhost:8080/api/auth/login
+          curl -fs -c $J -b $J localhost:8080/api/auth/csrf > /dev/null   # fresh token after sign-in
+          T=$(awk '$6=="KITEPOST-XSRF"{print $7}' $J)
+          curl -fs -b $J localhost:8080/api/auth/me | grep -q ADMIN
+          curl -fs -b $J localhost:8080/api/reference | grep -q '"US"'
+          curl -fs -b $J localhost:8080/api/reference | grep -q '"IN"'
+          curl -fs -b $J localhost:8080/api/campaigns | grep -q '"id"'
+          curl -fs -b $J -c $J -H "X-XSRF-TOKEN: $T" -H 'content-type: application/json' \
+            -d '{"name":"CI chairs","description":"Ergonomic office chairs and desks for hybrid teams","countries":["US","IN"]}' localhost:8080/api/strategy | grep -q profiles
+          curl -fs -b $J localhost:8080/api/audit | grep -q login
+          # Security headers
+          curl -sI -b $J localhost:8080/api/auth/me | grep -qi 'x-content-type-options: nosniff'
+      - name: Backend log
+        if: always()
+        run: tail -n 200 app.log || true
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: frontend } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: npm, cache-dependency-path: frontend/package-lock.json }
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build

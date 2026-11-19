@@ -1,0 +1,2466 @@
+{
+ "campaigns": [
+  {
+   "id": "c_411ae3bccc46",
+   "name": "Dental scheduling software: US and India clinics",
+   "description": "We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone. We do not want dental suppliers, labs or other software companies.",
+   "goal": "Sales",
+   "countries": [
+    "US",
+    "IN"
+   ],
+   "regions": {
+    "US": [
+     "Texas",
+     "California"
+    ],
+    "IN": [
+     "Maharashtra",
+     "Karnataka",
+     "Tamil Nadu"
+    ]
+   },
+   "strategy": {
+    "offer": "ChairTime, online scheduling and reminder software for dental clinics",
+    "core": "online scheduling and reminder",
+    "source": "rules",
+    "profiles": [
+     {
+      "id": "p0",
+      "name": "Independent dental practices",
+      "why": "From your description: you want to reach independent dental practices.",
+      "keywords": [
+       "independent dental practices"
+      ],
+      "on": true
+     },
+     {
+      "id": "p1",
+      "name": "Orthodontists",
+      "why": "From your description: you want to reach orthodontists.",
+      "keywords": [
+       "orthodontists"
+      ],
+      "on": true
+     },
+     {
+      "id": "p2",
+      "name": "Small dental groups",
+      "why": "From your description: you want to reach small dental groups.",
+      "keywords": [
+       "small dental groups"
+      ],
+      "on": true
+     }
+    ],
+    "localKeywords": {},
+    "signals": {
+     "competitor": [
+      "online",
+      "scheduling",
+      "reminder"
+     ],
+     "vendor": [
+      "supplier to manufacturers",
+      "components",
+      "agency",
+      "software for",
+      "consulting"
+     ],
+     "partner": [
+      "partner program",
+      "integration",
+      "complementary",
+      "referral"
+     ]
+    }
+   },
+   "pitch": "We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.",
+   "sender": {
+    "name": "Priya Menon",
+    "company": "ChairTime",
+    "email": "priya@chairtime.example",
+    "website": "https://chairtime.example",
+    "role": "Head of Partnerships",
+    "phone": "",
+    "address": "100 Congress Ave, Austin, TX 78701, USA"
+   },
+   "tone": "friendly",
+   "emailLanguage": "local",
+   "targetCustomers": 22,
+   "maxSites": 250,
+   "status": "done",
+   "queries": [
+    {
+     "q": "independent dental practices Texas USA",
+     "country": "US",
+     "gl": "us",
+     "location": "Texas"
+    },
+    {
+     "q": "orthodontists Texas USA",
+     "country": "US",
+     "gl": "us",
+     "location": "Texas"
+    },
+    {
+     "q": "small dental groups Texas USA",
+     "country": "US",
+     "gl": "us",
+     "location": "Texas"
+    },
+    {
+     "q": "independent dental practices California USA",
+     "country": "US",
+     "gl": "us",
+     "location": "California"
+    },
+    {
+     "q": "orthodontists California USA",
+     "country": "US",
+     "gl": "us",
+     "location": "California"
+    },
+    {
+     "q": "small dental groups California USA",
+     "country": "US",
+     "gl": "us",
+     "location": "California"
+    },
+    {
+     "q": "independent dental practices Maharashtra India",
+     "country": "IN",
+     "gl": "in",
+     "location": "Maharashtra"
+    },
+    {
+     "q": "orthodontists Maharashtra India",
+     "country": "IN",
+     "gl": "in",
+     "location": "Maharashtra"
+    },
+    {
+     "q": "small dental groups Maharashtra India",
+     "country": "IN",
+     "gl": "in",
+     "location": "Maharashtra"
+    },
+    {
+     "q": "independent dental practices Karnataka India",
+     "country": "IN",
+     "gl": "in",
+     "location": "Karnataka"
+    },
+    {
+     "q": "orthodontists Karnataka India",
+     "country": "IN",
+     "gl": "in",
+     "location": "Karnataka"
+    },
+    {
+     "q": "small dental groups Karnataka India",
+     "country": "IN",
+     "gl": "in",
+     "location": "Karnataka"
+    },
+    {
+     "q": "independent dental practices Tamil Nadu India",
+     "country": "IN",
+     "gl": "in",
+     "location": "Tamil Nadu"
+    },
+    {
+     "q": "orthodontists Tamil Nadu India",
+     "country": "IN",
+     "gl": "in",
+     "location": "Tamil Nadu"
+    },
+    {
+     "q": "small dental groups Tamil Nadu India",
+     "country": "IN",
+     "gl": "in",
+     "location": "Tamil Nadu"
+    }
+   ],
+   "queryIndex": 11,
+   "createdAt": "2026-11-12T06:19:20.584Z",
+   "sending": true,
+   "error": null,
+   "startedAt": "2026-11-12T06:19:20.585Z",
+   "current": null
+  }
+ ],
+ "leads": [
+  {
+   "id": "l_910efa181575",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "hayes-trading.example",
+   "url": "https://hayes-trading.example/",
+   "company": "Hayes Trading",
+   "country": "US",
+   "location": "Texas",
+   "query": "independent dental practices Texas USA",
+   "snippet": "Hayes Trading is one of United States's independent small dental groups, serving customers from Texas.",
+   "createdAt": "2026-11-12T06:19:21.486Z",
+   "status": "review",
+   "category": "customer",
+   "title": "Hayes Trading | Small dental groups in Texas",
+   "siteSummary": "Hayes Trading is one of United States's independent small dental groups, serving customers from Texas. About us. Hayes Trading is an established small dental group based in Texas, United States. small dental groups: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: sales@hayes-trading.example",
+   "lang": "en",
+   "emails": [
+    "sales@hayes-trading.example"
+   ],
+   "pages": [
+    "https://hayes-trading.example/",
+    "https://hayes-trading.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, small).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "sales@hayes-trading.example",
+   "updatedAt": "2026-11-12T06:19:22.522Z",
+   "draft": {
+    "subject": "ChairTime × Hayes Trading",
+    "body": "Hi Hayes Trading team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across hayes-trading.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   }
+  },
+  {
+   "id": "l_2389697291ae",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "reed-partners.example",
+   "url": "https://reed-partners.example/",
+   "company": "Reed Partners",
+   "country": "US",
+   "location": "Texas",
+   "query": "independent dental practices Texas USA",
+   "snippet": "Reed Partners is one of United States's independent small dental groups, serving customers from Texas.",
+   "createdAt": "2026-11-12T06:19:21.486Z",
+   "status": "review",
+   "category": "customer",
+   "title": "Reed Partners | Small dental groups in Texas",
+   "siteSummary": "Reed Partners is one of United States's independent small dental groups, serving customers from Texas. About us. Reed Partners is an established small dental group based in Texas, United States. small dental groups: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: sales@reed-partners.example",
+   "lang": "en",
+   "emails": [
+    "sales@reed-partners.example"
+   ],
+   "pages": [
+    "https://reed-partners.example/",
+    "https://reed-partners.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, small).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "sales@reed-partners.example",
+   "updatedAt": "2026-11-12T06:19:22.676Z",
+   "draft": {
+    "subject": "ChairTime × Reed Partners",
+    "body": "Hi Reed Partners team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across reed-partners.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   }
+  },
+  {
+   "id": "l_9c91c188fca0",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "united-states-business-finder.example",
+   "url": "https://united-states-business-finder.example/",
+   "company": "Top 50 orthodontists in United States",
+   "country": "US",
+   "location": "Texas",
+   "query": "independent dental practices Texas USA",
+   "snippet": "Find the best orthodontists near you. Compare ratings and contact details.",
+   "createdAt": "2026-11-12T06:19:21.486Z",
+   "status": "classified",
+   "category": "irrelevant",
+   "title": "Top 50 orthodontists in United States | Business directory",
+   "siteSummary": "Find the best orthodontists near you. Compare ratings and contact details. Business directory listing orthodontists companies in United States. Sponsored listings. Add your company for free.",
+   "lang": "en",
+   "emails": [],
+   "pages": [
+    "https://united-states-business-finder.example/",
+    "https://united-states-business-finder.example/contact"
+   ],
+   "confidence": 0.8,
+   "score": 4,
+   "reason": "Looks like a directory, marketplace, job board or news site.",
+   "categorySource": "rules",
+   "industry": null,
+   "email": null,
+   "updatedAt": "2026-11-12T06:19:22.582Z"
+  },
+  {
+   "id": "l_45e4b601cf16",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "parker-and-sons.example",
+   "url": "https://parker-and-sons.example/",
+   "company": "Parker & Sons",
+   "country": "US",
+   "location": "Texas",
+   "query": "independent dental practices Texas USA",
+   "snippet": "Complementary services with a partner programme for equipment brands.",
+   "createdAt": "2026-11-12T06:19:21.486Z",
+   "status": "classified",
+   "category": "partner",
+   "title": "Parker & Sons | Software and consulting",
+   "siteSummary": "Complementary services with a partner programme for equipment brands. Parker & Sons offers training, installation and maintenance planning. Our partner programme connects equipment brands with end users, and our platform integrates with leading systems. Based in Texas. Email: info@parker-and-sons.example",
+   "lang": "en",
+   "emails": [
+    "info@parker-and-sons.example"
+   ],
+   "pages": [
+    "https://parker-and-sons.example/",
+    "https://parker-and-sons.example/contact"
+   ],
+   "confidence": 0.65,
+   "score": 4,
+   "reason": "Complementary business that could refer or integrate, not a buyer.",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "info@parker-and-sons.example",
+   "updatedAt": "2026-11-12T06:19:23.700Z"
+  },
+  {
+   "id": "l_3780bc92a78b",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "holland-supply-co.example",
+   "url": "https://holland-supply-co.example/",
+   "company": "Holland Supply Co.",
+   "country": "US",
+   "location": "Texas",
+   "query": "independent dental practices Texas USA",
+   "snippet": "Holland Supply Co. is one of United States's independent independent dental practices, serving customers from Texas.",
+   "createdAt": "2026-11-12T06:19:21.486Z",
+   "status": "no_email",
+   "category": "customer",
+   "title": "Holland Supply Co. | Independent dental practices in Texas",
+   "siteSummary": "Holland Supply Co. is one of United States's independent independent dental practices, serving customers from Texas. About us. Holland Supply Co. is an established independent dental practice based in Texas, United States. independent dental practices: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries.",
+   "lang": "en",
+   "emails": [],
+   "pages": [
+    "https://holland-supply-co.example/",
+    "https://holland-supply-co.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, practices).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": null,
+   "updatedAt": "2026-11-12T06:19:23.167Z"
+  },
+  {
+   "id": "l_19ff13743c8b",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "walsh-trading.example",
+   "url": "https://walsh-trading.example/",
+   "company": "Walsh Trading",
+   "country": "US",
+   "location": "Texas",
+   "query": "independent dental practices Texas USA",
+   "snippet": "Walsh Trading is one of United States's independent small dental groups, serving customers from Texas.",
+   "createdAt": "2026-11-12T06:19:21.486Z",
+   "status": "review",
+   "category": "customer",
+   "title": "Walsh Trading | Small dental groups in Texas",
+   "siteSummary": "Walsh Trading is one of United States's independent small dental groups, serving customers from Texas. About us. Walsh Trading is an established small dental group based in Texas, United States. small dental groups: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: contact@walsh-trading.example",
+   "lang": "en",
+   "emails": [
+    "contact@walsh-trading.example"
+   ],
+   "pages": [
+    "https://walsh-trading.example/",
+    "https://walsh-trading.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, small).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "contact@walsh-trading.example",
+   "updatedAt": "2026-11-12T06:19:23.805Z",
+   "draft": {
+    "subject": "ChairTime × Walsh Trading",
+    "body": "Hi Walsh Trading team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across walsh-trading.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   }
+  },
+  {
+   "id": "l_1b8799562e54",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "reed-industries.example",
+   "url": "https://reed-industries.example/",
+   "company": "Reed Industries",
+   "country": "US",
+   "location": "Texas",
+   "query": "orthodontists Texas USA",
+   "snippet": "Complementary services with a partner programme for equipment brands.",
+   "createdAt": "2026-11-12T06:19:24.705Z",
+   "status": "classified",
+   "category": "partner",
+   "title": "Reed Industries | Software and consulting",
+   "siteSummary": "Complementary services with a partner programme for equipment brands. Reed Industries offers training, installation and maintenance planning. Our partner programme connects equipment brands with end users, and our platform integrates with leading systems. Based in Texas.",
+   "lang": "en",
+   "emails": [],
+   "pages": [
+    "https://reed-industries.example/",
+    "https://reed-industries.example/contact"
+   ],
+   "confidence": 0.65,
+   "score": 4,
+   "reason": "Complementary business that could refer or integrate, not a buyer.",
+   "categorySource": "rules",
+   "industry": null,
+   "email": null,
+   "updatedAt": "2026-11-12T06:19:25.699Z"
+  },
+  {
+   "id": "l_f45c37def903",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "morgan-solutions.example",
+   "url": "https://morgan-solutions.example/",
+   "company": "Morgan Solutions",
+   "country": "US",
+   "location": "Texas",
+   "query": "orthodontists Texas USA",
+   "snippet": "Morgan Solutions is one of United States's independent independent dental practices, serving customers from Texas.",
+   "createdAt": "2026-11-12T06:19:24.705Z",
+   "status": "review",
+   "category": "customer",
+   "title": "Morgan Solutions | Independent dental practices in Texas",
+   "siteSummary": "Morgan Solutions is one of United States's independent independent dental practices, serving customers from Texas. About us. Morgan Solutions is an established independent dental practice based in Texas, United States. independent dental practices: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: hello@morgan-solutions.example",
+   "lang": "en",
+   "emails": [
+    "hello@morgan-solutions.example"
+   ],
+   "pages": [
+    "https://morgan-solutions.example/",
+    "https://morgan-solutions.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, practices).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "hello@morgan-solutions.example",
+   "updatedAt": "2026-11-12T06:19:25.794Z",
+   "draft": {
+    "subject": "ChairTime × Morgan Solutions",
+    "body": "Hi Morgan Solutions team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across morgan-solutions.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   }
+  },
+  {
+   "id": "l_04d2ad9cae9a",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "bennett-reminder-trading.example",
+   "url": "https://bennett-reminder-trading.example/",
+   "company": "Bennett Reminder Trading",
+   "country": "US",
+   "location": "Texas",
+   "query": "small dental groups Texas USA",
+   "snippet": "Leading manufacturer of online scheduling and reminder since 1998.",
+   "createdAt": "2026-11-12T06:19:26.695Z",
+   "status": "classified",
+   "category": "competitor",
+   "title": "Bennett Reminder Trading | Manufacturer of online scheduling and reminder",
+   "siteSummary": "Leading manufacturer of online scheduling and reminder since 1998. Bennett Reminder Trading is a leading manufacturer of online scheduling and reminder. We design and produce online scheduling and reminder in our own factory in Texas. Our engineers develop every model in-house and we ship to 30 countries. Email: sales@bennett-reminder-trading.example",
+   "lang": "en",
+   "emails": [
+    "sales@bennett-reminder-trading.example"
+   ],
+   "pages": [
+    "https://bennett-reminder-trading.example/",
+    "https://bennett-reminder-trading.example/contact"
+   ],
+   "confidence": 0.75,
+   "score": 2.5,
+   "reason": "Makes a similar product (online, scheduling, reminder).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "sales@bennett-reminder-trading.example",
+   "updatedAt": "2026-11-12T06:19:27.326Z"
+  },
+  {
+   "id": "l_83483ed7645f",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "morgan-reminder-solutions.example",
+   "url": "https://morgan-reminder-solutions.example/",
+   "company": "Morgan Reminder Solutions",
+   "country": "US",
+   "location": "Texas",
+   "query": "small dental groups Texas USA",
+   "snippet": "Leading manufacturer of online scheduling and reminder since 1998.",
+   "createdAt": "2026-11-12T06:19:26.695Z",
+   "status": "classified",
+   "category": "competitor",
+   "title": "Morgan Reminder Solutions | Manufacturer of online scheduling and reminder",
+   "siteSummary": "Leading manufacturer of online scheduling and reminder since 1998. Morgan Reminder Solutions is a leading manufacturer of online scheduling and reminder. We design and produce online scheduling and reminder in our own factory in Texas. Our engineers develop every model in-house and we ship to 30 countries. Email: info@morgan-reminder-solutions.example",
+   "lang": "en",
+   "emails": [
+    "info@morgan-reminder-solutions.example"
+   ],
+   "pages": [
+    "https://morgan-reminder-solutions.example/",
+    "https://morgan-reminder-solutions.example/contact"
+   ],
+   "confidence": 0.75,
+   "score": 2.5,
+   "reason": "Makes a similar product (online, scheduling, reminder).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "info@morgan-reminder-solutions.example",
+   "updatedAt": "2026-11-12T06:19:27.580Z"
+  },
+  {
+   "id": "l_103e59a9ebbc",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "clarke-solutions.example",
+   "url": "https://clarke-solutions.example/",
+   "company": "Clarke Solutions",
+   "country": "US",
+   "location": "Texas",
+   "query": "small dental groups Texas USA",
+   "snippet": "Clarke Solutions is one of United States's independent small dental groups, serving customers from Texas.",
+   "createdAt": "2026-11-12T06:19:26.695Z",
+   "status": "review",
+   "category": "customer",
+   "title": "Clarke Solutions | Small dental groups in Texas",
+   "siteSummary": "Clarke Solutions is one of United States's independent small dental groups, serving customers from Texas. About us. Clarke Solutions is an established small dental group based in Texas, United States. small dental groups: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: info@clarke-solutions.example",
+   "lang": "en",
+   "emails": [
+    "info@clarke-solutions.example"
+   ],
+   "pages": [
+    "https://clarke-solutions.example/",
+    "https://clarke-solutions.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, small).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "info@clarke-solutions.example",
+   "updatedAt": "2026-11-12T06:19:27.659Z",
+   "draft": {
+    "subject": "ChairTime × Clarke Solutions",
+    "body": "Hi Clarke Solutions team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across clarke-solutions.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   }
+  },
+  {
+   "id": "l_d0aa4653b818",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "bennett-solutions.example",
+   "url": "https://bennett-solutions.example/",
+   "company": "Bennett Solutions",
+   "country": "US",
+   "location": "Texas",
+   "query": "small dental groups Texas USA",
+   "snippet": "Bennett Solutions is one of United States's independent independent dental practices, serving customers from Texas.",
+   "createdAt": "2026-11-12T06:19:26.695Z",
+   "status": "review",
+   "category": "customer",
+   "title": "Bennett Solutions | Independent dental practices in Texas",
+   "siteSummary": "Bennett Solutions is one of United States's independent independent dental practices, serving customers from Texas. About us. Bennett Solutions is an established independent dental practice based in Texas, United States. independent dental practices: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: hello@bennett-solutions.example",
+   "lang": "en",
+   "emails": [
+    "hello@bennett-solutions.example"
+   ],
+   "pages": [
+    "https://bennett-solutions.example/",
+    "https://bennett-solutions.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, practices).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "hello@bennett-solutions.example",
+   "updatedAt": "2026-11-12T06:19:28.462Z",
+   "draft": {
+    "subject": "ChairTime × Bennett Solutions",
+    "body": "Hi Bennett Solutions team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across bennett-solutions.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   }
+  },
+  {
+   "id": "l_2ae03a636236",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "parker-group.example",
+   "url": "https://parker-group.example/",
+   "company": "Parker Group",
+   "country": "US",
+   "location": "California",
+   "query": "independent dental practices California USA",
+   "snippet": "Complementary services with a partner programme for equipment brands.",
+   "createdAt": "2026-11-12T06:19:29.363Z",
+   "status": "classified",
+   "category": "partner",
+   "title": "Parker Group | Software and consulting",
+   "siteSummary": "Complementary services with a partner programme for equipment brands. Parker Group offers training, installation and maintenance planning. Our partner programme connects equipment brands with end users, and our platform integrates with leading systems. Based in California. Email: info@parker-group.example",
+   "lang": "en",
+   "emails": [
+    "info@parker-group.example"
+   ],
+   "pages": [
+    "https://parker-group.example/",
+    "https://parker-group.example/contact"
+   ],
+   "confidence": 0.65,
+   "score": 4,
+   "reason": "Complementary business that could refer or integrate, not a buyer.",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "info@parker-group.example",
+   "updatedAt": "2026-11-12T06:19:30.562Z"
+  },
+  {
+   "id": "l_91a9f3278041",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "morgan-and-sons.example",
+   "url": "https://morgan-and-sons.example/",
+   "company": "Morgan & Sons",
+   "country": "US",
+   "location": "California",
+   "query": "independent dental practices California USA",
+   "snippet": "Morgan & Sons is one of United States's independent independent dental practices, serving customers from California.",
+   "createdAt": "2026-11-12T06:19:29.363Z",
+   "status": "sent",
+   "category": "customer",
+   "title": "Morgan & Sons | Independent dental practices in California",
+   "siteSummary": "Morgan & Sons is one of United States's independent independent dental practices, serving customers from California. About us. Morgan & Sons is an established independent dental practice based in California, United States. independent dental practices: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: contact@morgan-and-sons.example",
+   "lang": "en",
+   "emails": [
+    "contact@morgan-and-sons.example"
+   ],
+   "pages": [
+    "https://morgan-and-sons.example/",
+    "https://morgan-and-sons.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, practices).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "contact@morgan-and-sons.example",
+   "updatedAt": "2026-11-12T06:19:52.136Z",
+   "draft": {
+    "subject": "ChairTime × Morgan & Sons",
+    "body": "Hi Morgan & Sons team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across morgan-and-sons.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   },
+   "approvedAt": "2026-11-12T06:19:52.136Z",
+   "error": null,
+   "sent": {
+    "at": "2026-11-12T06:19:54.779Z",
+    "messageId": "<kp.m_dc8b46d7a736@chairtime.example>",
+    "dryRun": true,
+    "to": "contact@morgan-and-sons.example",
+    "subject": "ChairTime × Morgan & Sons",
+    "text": "Hi Morgan & Sons team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across morgan-and-sons.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime\n\n--\nYou received this one-time message because Morgan & Sons matches what we offer. Reply \"unsubscribe\" and we won't contact you again.\nChairTime, 100 Congress Ave, Austin, TX 78701, USA"
+   }
+  },
+  {
+   "id": "l_c314e212d8cb",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "turner-group.example",
+   "url": "https://turner-group.example/",
+   "company": "Turner Group",
+   "country": "US",
+   "location": "California",
+   "query": "independent dental practices California USA",
+   "snippet": "Turner Group is one of United States's independent small dental groups, serving customers from California.",
+   "createdAt": "2026-11-12T06:19:29.363Z",
+   "status": "review",
+   "category": "customer",
+   "title": "Turner Group | Small dental groups in California",
+   "siteSummary": "Turner Group is one of United States's independent small dental groups, serving customers from California. About us. Turner Group is an established small dental group based in California, United States. small dental groups: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: info@turner-group.example",
+   "lang": "en",
+   "emails": [
+    "info@turner-group.example"
+   ],
+   "pages": [
+    "https://turner-group.example/",
+    "https://turner-group.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, small).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "info@turner-group.example",
+   "updatedAt": "2026-11-12T06:19:29.908Z",
+   "draft": {
+    "subject": "ChairTime × Turner Group",
+    "body": "Hi Turner Group team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across turner-group.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   }
+  },
+  {
+   "id": "l_170d5c38d1db",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "bennett-trading.example",
+   "url": "https://bennett-trading.example/",
+   "company": "Bennett Trading",
+   "country": "US",
+   "location": "California",
+   "query": "orthodontists California USA",
+   "snippet": "We supply manufacturers with parts, tooling and engineering services.",
+   "createdAt": "2026-11-12T06:19:31.564Z",
+   "status": "classified",
+   "category": "vendor",
+   "title": "Bennett Trading | Components and services for manufacturers",
+   "siteSummary": "We supply manufacturers with parts, tooling and engineering services. Bennett Trading supplies components, spare parts and engineering services to manufacturers. We help producers of online scheduling and reminder shorten lead times and reduce costs. ISO 9001 certified, based in California. Email: sales@bennett-trading.example",
+   "lang": "en",
+   "emails": [
+    "sales@bennett-trading.example"
+   ],
+   "pages": [
+    "https://bennett-trading.example/",
+    "https://bennett-trading.example/contact"
+   ],
+   "confidence": 0.7,
+   "score": 2.5,
+   "reason": "Sells products or services to companies like yours.",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "sales@bennett-trading.example",
+   "updatedAt": "2026-11-12T06:19:32.251Z"
+  },
+  {
+   "id": "l_ca8956b037a8",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "reed-supply-co.example",
+   "url": "https://reed-supply-co.example/",
+   "company": "Reed Supply Co.",
+   "country": "US",
+   "location": "California",
+   "query": "orthodontists California USA",
+   "snippet": "We supply manufacturers with parts, tooling and engineering services.",
+   "createdAt": "2026-11-12T06:19:31.564Z",
+   "status": "classified",
+   "category": "vendor",
+   "title": "Reed Supply Co. | Components and services for manufacturers",
+   "siteSummary": "We supply manufacturers with parts, tooling and engineering services. Reed Supply Co. supplies components, spare parts and engineering services to manufacturers. We help producers of online scheduling and reminder shorten lead times and reduce costs. ISO 9001 certified, based in California. Email: hello@reed-supply-co.example",
+   "lang": "en",
+   "emails": [
+    "hello@reed-supply-co.example"
+   ],
+   "pages": [
+    "https://reed-supply-co.example/",
+    "https://reed-supply-co.example/contact"
+   ],
+   "confidence": 0.7,
+   "score": 2.5,
+   "reason": "Sells products or services to companies like yours.",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "hello@reed-supply-co.example",
+   "updatedAt": "2026-11-12T06:19:32.210Z"
+  },
+  {
+   "id": "l_d05a0878bf6c",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "clarke-and-sons.example",
+   "url": "https://clarke-and-sons.example/",
+   "company": "Clarke & Sons",
+   "country": "US",
+   "location": "California",
+   "query": "orthodontists California USA",
+   "snippet": "Clarke & Sons is one of United States's independent small dental groups, serving customers from California.",
+   "createdAt": "2026-11-12T06:19:31.564Z",
+   "status": "sent",
+   "category": "customer",
+   "title": "Clarke & Sons | Small dental groups in California",
+   "siteSummary": "Clarke & Sons is one of United States's independent small dental groups, serving customers from California. About us. Clarke & Sons is an established small dental group based in California, United States. small dental groups: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: contact@clarke-and-sons.example",
+   "lang": "en",
+   "emails": [
+    "contact@clarke-and-sons.example"
+   ],
+   "pages": [
+    "https://clarke-and-sons.example/",
+    "https://clarke-and-sons.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, small).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "contact@clarke-and-sons.example",
+   "updatedAt": "2026-11-12T06:19:52.136Z",
+   "draft": {
+    "subject": "ChairTime × Clarke & Sons",
+    "body": "Hi Clarke & Sons team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across clarke-and-sons.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   },
+   "approvedAt": "2026-11-12T06:19:52.136Z",
+   "error": null,
+   "sent": {
+    "at": "2026-11-12T06:19:58.779Z",
+    "messageId": "<kp.m_70cf8835dfd7@chairtime.example>",
+    "dryRun": true,
+    "to": "contact@clarke-and-sons.example",
+    "subject": "ChairTime × Clarke & Sons",
+    "text": "Hi Clarke & Sons team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across clarke-and-sons.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime\n\n--\nYou received this one-time message because Clarke & Sons matches what we offer. Reply \"unsubscribe\" and we won't contact you again.\nChairTime, 100 Congress Ave, Austin, TX 78701, USA"
+   }
+  },
+  {
+   "id": "l_f6713f55aa21",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "reed-trading.example",
+   "url": "https://reed-trading.example/",
+   "company": "Reed Trading",
+   "country": "US",
+   "location": "California",
+   "query": "orthodontists California USA",
+   "snippet": "Complementary services with a partner programme for equipment brands.",
+   "createdAt": "2026-11-12T06:19:31.564Z",
+   "status": "classified",
+   "category": "partner",
+   "title": "Reed Trading | Software and consulting",
+   "siteSummary": "Complementary services with a partner programme for equipment brands. Reed Trading offers training, installation and maintenance planning. Our partner programme connects equipment brands with end users, and our platform integrates with leading systems. Based in California. Email: sales@reed-trading.example",
+   "lang": "en",
+   "emails": [
+    "sales@reed-trading.example"
+   ],
+   "pages": [
+    "https://reed-trading.example/",
+    "https://reed-trading.example/contact"
+   ],
+   "confidence": 0.65,
+   "score": 4,
+   "reason": "Complementary business that could refer or integrate, not a buyer.",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "sales@reed-trading.example",
+   "updatedAt": "2026-11-12T06:19:33.881Z"
+  },
+  {
+   "id": "l_60c477c4738c",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "parker-solutions.example",
+   "url": "https://parker-solutions.example/",
+   "company": "Parker Solutions",
+   "country": "US",
+   "location": "California",
+   "query": "small dental groups California USA",
+   "snippet": "Parker Solutions is one of United States's independent small dental groups, serving customers from California.",
+   "createdAt": "2026-11-12T06:19:34.781Z",
+   "status": "replied",
+   "category": "customer",
+   "title": "Parker Solutions | Small dental groups in California",
+   "siteSummary": "Parker Solutions is one of United States's independent small dental groups, serving customers from California. About us. Parker Solutions is an established small dental group based in California, United States. small dental groups: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: info@parker-solutions.example",
+   "lang": "en",
+   "emails": [
+    "info@parker-solutions.example"
+   ],
+   "pages": [
+    "https://parker-solutions.example/",
+    "https://parker-solutions.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, small).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "info@parker-solutions.example",
+   "updatedAt": "2026-11-12T06:19:52.136Z",
+   "draft": {
+    "subject": "ChairTime × Parker Solutions",
+    "body": "Hi Parker Solutions team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across parker-solutions.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   },
+   "approvedAt": "2026-11-12T06:19:52.136Z",
+   "error": null,
+   "sent": {
+    "at": "2026-11-12T06:20:02.779Z",
+    "messageId": "<kp.m_b38d1cb50c2b@chairtime.example>",
+    "dryRun": true,
+    "to": "info@parker-solutions.example",
+    "subject": "ChairTime × Parker Solutions",
+    "text": "Hi Parker Solutions team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across parker-solutions.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime\n\n--\nYou received this one-time message because Parker Solutions matches what we offer. Reply \"unsubscribe\" and we won't contact you again.\nChairTime, 100 Congress Ave, Austin, TX 78701, USA"
+   },
+   "contactFirst": "Emma"
+  },
+  {
+   "id": "l_33fe7ece0b14",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "walsh-partners.example",
+   "url": "https://walsh-partners.example/",
+   "company": "Walsh Partners",
+   "country": "US",
+   "location": "California",
+   "query": "small dental groups California USA",
+   "snippet": "Walsh Partners is one of United States's independent orthodontists, serving customers from California.",
+   "createdAt": "2026-11-12T06:19:34.781Z",
+   "status": "sent",
+   "category": "customer",
+   "title": "Walsh Partners | Orthodontists in California",
+   "siteSummary": "Walsh Partners is one of United States's independent orthodontists, serving customers from California. About us. Walsh Partners is an established orthodontist based in California, United States. orthodontists: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: info@walsh-partners.example",
+   "lang": "en",
+   "emails": [
+    "info@walsh-partners.example"
+   ],
+   "pages": [
+    "https://walsh-partners.example/",
+    "https://walsh-partners.example/contact"
+   ],
+   "confidence": 0.8700000000000001,
+   "score": 9,
+   "reason": "Matches your customer profile (independent, orthodontists).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "info@walsh-partners.example",
+   "updatedAt": "2026-11-12T06:19:52.136Z",
+   "draft": {
+    "subject": "ChairTime × Walsh Partners",
+    "body": "Hi Walsh Partners team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across walsh-partners.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   },
+   "approvedAt": "2026-11-12T06:19:52.136Z",
+   "error": null,
+   "sent": {
+    "at": "2026-11-12T06:20:06.779Z",
+    "messageId": "<kp.m_adfe31e82275@chairtime.example>",
+    "dryRun": true,
+    "to": "info@walsh-partners.example",
+    "subject": "ChairTime × Walsh Partners",
+    "text": "Hi Walsh Partners team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across walsh-partners.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime\n\n--\nYou received this one-time message because Walsh Partners matches what we offer. Reply \"unsubscribe\" and we won't contact you again.\nChairTime, 100 Congress Ave, Austin, TX 78701, USA"
+   }
+  },
+  {
+   "id": "l_52dbc1024c85",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "reed-reminder-supply-co.example",
+   "url": "https://reed-reminder-supply-co.example/",
+   "company": "Reed Reminder Supply Co.",
+   "country": "US",
+   "location": "California",
+   "query": "small dental groups California USA",
+   "snippet": "Leading manufacturer of online scheduling and reminder since 1998.",
+   "createdAt": "2026-11-12T06:19:34.781Z",
+   "status": "classified",
+   "category": "competitor",
+   "title": "Reed Reminder Supply Co. | Manufacturer of online scheduling and reminder",
+   "siteSummary": "Leading manufacturer of online scheduling and reminder since 1998. Reed Reminder Supply Co. is a leading manufacturer of online scheduling and reminder. We design and produce online scheduling and reminder in our own factory in California. Our engineers develop every model in-house and we ship to 30 countries. Email: contact@reed-reminder-supply-co.example",
+   "lang": "en",
+   "emails": [
+    "contact@reed-reminder-supply-co.example"
+   ],
+   "pages": [
+    "https://reed-reminder-supply-co.example/",
+    "https://reed-reminder-supply-co.example/contact"
+   ],
+   "confidence": 0.75,
+   "score": 2.5,
+   "reason": "Makes a similar product (online, scheduling, reminder).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "contact@reed-reminder-supply-co.example",
+   "updatedAt": "2026-11-12T06:19:36.100Z"
+  },
+  {
+   "id": "l_0025ea6c2079",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "foster-and-sons.example",
+   "url": "https://foster-and-sons.example/",
+   "company": "Foster & Sons",
+   "country": "US",
+   "location": "California",
+   "query": "small dental groups California USA",
+   "snippet": "Foster & Sons is one of United States's independent orthodontists, serving customers from California.",
+   "createdAt": "2026-11-12T06:19:34.781Z",
+   "status": "sent",
+   "category": "customer",
+   "title": "Foster & Sons | Orthodontists in California",
+   "siteSummary": "Foster & Sons is one of United States's independent orthodontists, serving customers from California. About us. Foster & Sons is an established orthodontist based in California, United States. orthodontists: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: sales@foster-and-sons.example",
+   "lang": "en",
+   "emails": [
+    "sales@foster-and-sons.example"
+   ],
+   "pages": [
+    "https://foster-and-sons.example/",
+    "https://foster-and-sons.example/contact"
+   ],
+   "confidence": 0.8700000000000001,
+   "score": 9,
+   "reason": "Matches your customer profile (independent, orthodontists).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "sales@foster-and-sons.example",
+   "updatedAt": "2026-11-12T06:19:52.136Z",
+   "draft": {
+    "subject": "ChairTime × Foster & Sons",
+    "body": "Hi Foster & Sons team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across foster-and-sons.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   },
+   "approvedAt": "2026-11-12T06:19:52.136Z",
+   "error": null,
+   "sent": {
+    "at": "2026-11-12T06:20:10.779Z",
+    "messageId": "<kp.m_59e97f1e3b7e@chairtime.example>",
+    "dryRun": true,
+    "to": "sales@foster-and-sons.example",
+    "subject": "ChairTime × Foster & Sons",
+    "text": "Hi Foster & Sons team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across foster-and-sons.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime\n\n--\nYou received this one-time message because Foster & Sons matches what we offer. Reply \"unsubscribe\" and we won't contact you again.\nChairTime, 100 Congress Ave, Austin, TX 78701, USA"
+   },
+   "contactFirst": "Olivia"
+  },
+  {
+   "id": "l_0b4de167ffed",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "iyer-reminder-and-co.example",
+   "url": "https://iyer-reminder-and-co.example/",
+   "company": "Iyer Reminder & Co.",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "independent dental practices Maharashtra India",
+   "snippet": "Leading manufacturer of online scheduling and reminder since 1998.",
+   "createdAt": "2026-11-12T06:19:37.979Z",
+   "status": "classified",
+   "category": "competitor",
+   "title": "Iyer Reminder & Co. | Manufacturer of online scheduling and reminder",
+   "siteSummary": "Leading manufacturer of online scheduling and reminder since 1998. Iyer Reminder & Co. is a leading manufacturer of online scheduling and reminder. We design and produce online scheduling and reminder in our own factory in Maharashtra. Our engineers develop every model in-house and we ship to 30 countries.",
+   "lang": "en",
+   "emails": [],
+   "pages": [
+    "https://iyer-reminder-and-co.example/",
+    "https://iyer-reminder-and-co.example/contact"
+   ],
+   "confidence": 0.75,
+   "score": 2.5,
+   "reason": "Makes a similar product (online, scheduling, reminder).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": null,
+   "updatedAt": "2026-11-12T06:19:38.693Z"
+  },
+  {
+   "id": "l_3491865c18f5",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "india-business-finder.example",
+   "url": "https://india-business-finder.example/",
+   "company": "Top 50 independent dental practices in India",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "independent dental practices Maharashtra India",
+   "snippet": "Find the best independent dental practices near you. Compare ratings and contact details.",
+   "createdAt": "2026-11-12T06:19:37.979Z",
+   "status": "classified",
+   "category": "irrelevant",
+   "title": "Top 50 independent dental practices in India | Business directory",
+   "siteSummary": "Find the best independent dental practices near you. Compare ratings and contact details. Business directory listing independent dental practices companies in India. Sponsored listings. Add your company for free. Email: info@india-business-finder.example",
+   "lang": "en",
+   "emails": [
+    "info@india-business-finder.example"
+   ],
+   "pages": [
+    "https://india-business-finder.example/",
+    "https://india-business-finder.example/contact"
+   ],
+   "confidence": 0.8,
+   "score": 4,
+   "reason": "Looks like a directory, marketplace, job board or news site.",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "info@india-business-finder.example",
+   "updatedAt": "2026-11-12T06:19:39.148Z"
+  },
+  {
+   "id": "l_b42b3bae34ce",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "patel-reminder-and-co.example",
+   "url": "https://patel-reminder-and-co.example/",
+   "company": "Patel Reminder & Co.",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "independent dental practices Maharashtra India",
+   "snippet": "Leading manufacturer of online scheduling and reminder since 1998.",
+   "createdAt": "2026-11-12T06:19:37.979Z",
+   "status": "classified",
+   "category": "competitor",
+   "title": "Patel Reminder & Co. | Manufacturer of online scheduling and reminder",
+   "siteSummary": "Leading manufacturer of online scheduling and reminder since 1998. Patel Reminder & Co. is a leading manufacturer of online scheduling and reminder. We design and produce online scheduling and reminder in our own factory in Maharashtra. Our engineers develop every model in-house and we ship to 30 countries. Email: hello@patel-reminder-and-co.example",
+   "lang": "en",
+   "emails": [
+    "hello@patel-reminder-and-co.example"
+   ],
+   "pages": [
+    "https://patel-reminder-and-co.example/",
+    "https://patel-reminder-and-co.example/contact"
+   ],
+   "confidence": 0.75,
+   "score": 2.5,
+   "reason": "Makes a similar product (online, scheduling, reminder).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "hello@patel-reminder-and-co.example",
+   "updatedAt": "2026-11-12T06:19:39.189Z"
+  },
+  {
+   "id": "l_4d8c5edc48d9",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "desai-reminder-industries.example",
+   "url": "https://desai-reminder-industries.example/",
+   "company": "Desai Reminder Industries",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "independent dental practices Maharashtra India",
+   "snippet": "Leading manufacturer of online scheduling and reminder since 1998.",
+   "createdAt": "2026-11-12T06:19:37.979Z",
+   "status": "classified",
+   "category": "competitor",
+   "title": "Desai Reminder Industries | Manufacturer of online scheduling and reminder",
+   "siteSummary": "Leading manufacturer of online scheduling and reminder since 1998. Desai Reminder Industries is a leading manufacturer of online scheduling and reminder. We design and produce online scheduling and reminder in our own factory in Maharashtra. Our engineers develop every model in-house and we ship to 30 countries. Email: info@desai-reminder-industries.example",
+   "lang": "en",
+   "emails": [
+    "info@desai-reminder-industries.example"
+   ],
+   "pages": [
+    "https://desai-reminder-industries.example/",
+    "https://desai-reminder-industries.example/contact"
+   ],
+   "confidence": 0.75,
+   "score": 2.5,
+   "reason": "Makes a similar product (online, scheduling, reminder).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "info@desai-reminder-industries.example",
+   "updatedAt": "2026-11-12T06:19:39.653Z"
+  },
+  {
+   "id": "l_9067ec1b7889",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "gupta.example",
+   "url": "https://gupta.example/",
+   "company": "Gupta Pvt. Ltd.",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "independent dental practices Maharashtra India",
+   "snippet": "Gupta Pvt. Ltd. is one of India's independent independent dental practices, serving customers from Maharashtra.",
+   "createdAt": "2026-11-12T06:19:37.979Z",
+   "status": "rejected",
+   "category": "customer",
+   "title": "Gupta Pvt. Ltd. | Independent dental practices in Maharashtra",
+   "siteSummary": "Gupta Pvt. Ltd. is one of India's independent independent dental practices, serving customers from Maharashtra. About us. Gupta Pvt. Ltd. is an established independent dental practice based in Maharashtra, India. independent dental practices: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: sales@gupta.example",
+   "lang": "en",
+   "emails": [
+    "sales@gupta.example"
+   ],
+   "pages": [
+    "https://gupta.example/",
+    "https://gupta.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, practices).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "sales@gupta.example",
+   "updatedAt": "2026-11-12T06:19:52.251Z",
+   "draft": {
+    "subject": "ChairTime × Gupta Pvt. Ltd.",
+    "body": "Hi Gupta Pvt. Ltd. team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across gupta.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   }
+  },
+  {
+   "id": "l_55aecf3b77c1",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "nair-industries.example",
+   "url": "https://nair-industries.example/",
+   "company": "Nair Industries",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "orthodontists Maharashtra India",
+   "snippet": "Nair Industries is one of India's independent independent dental practices, serving customers from Maharashtra.",
+   "createdAt": "2026-11-12T06:19:41.144Z",
+   "status": "no_email",
+   "category": "customer",
+   "title": "Nair Industries | Independent dental practices in Maharashtra",
+   "siteSummary": "Nair Industries is one of India's independent independent dental practices, serving customers from Maharashtra. About us. Nair Industries is an established independent dental practice based in Maharashtra, India. independent dental practices: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries.",
+   "lang": "en",
+   "emails": [],
+   "pages": [
+    "https://nair-industries.example/",
+    "https://nair-industries.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, practices).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": null,
+   "updatedAt": "2026-11-12T06:19:41.633Z"
+  },
+  {
+   "id": "l_74e1085b6317",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "iyer.example",
+   "url": "https://iyer.example/",
+   "company": "Iyer Pvt. Ltd.",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "orthodontists Maharashtra India",
+   "snippet": "Iyer Pvt. Ltd. is one of India's independent small dental groups, serving customers from Maharashtra.",
+   "createdAt": "2026-11-12T06:19:41.144Z",
+   "status": "no_email",
+   "category": "customer",
+   "title": "Iyer Pvt. Ltd. | Small dental groups in Maharashtra",
+   "siteSummary": "Iyer Pvt. Ltd. is one of India's independent small dental groups, serving customers from Maharashtra. About us. Iyer Pvt. Ltd. is an established small dental group based in Maharashtra, India. small dental groups: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries.",
+   "lang": "en",
+   "emails": [],
+   "pages": [
+    "https://iyer.example/",
+    "https://iyer.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, small).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": null,
+   "updatedAt": "2026-11-12T06:19:42.114Z"
+  },
+  {
+   "id": "l_f702752586d5",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "mehta-enterprises.example",
+   "url": "https://mehta-enterprises.example/",
+   "company": "Mehta Enterprises",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "orthodontists Maharashtra India",
+   "snippet": "Mehta Enterprises is one of India's independent orthodontists, serving customers from Maharashtra.",
+   "createdAt": "2026-11-12T06:19:41.144Z",
+   "status": "replied",
+   "category": "customer",
+   "title": "Mehta Enterprises | Orthodontists in Maharashtra",
+   "siteSummary": "Mehta Enterprises is one of India's independent orthodontists, serving customers from Maharashtra. About us. Mehta Enterprises is an established orthodontist based in Maharashtra, India. orthodontists: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: hello@mehta-enterprises.example",
+   "lang": "en",
+   "emails": [
+    "hello@mehta-enterprises.example"
+   ],
+   "pages": [
+    "https://mehta-enterprises.example/",
+    "https://mehta-enterprises.example/contact"
+   ],
+   "confidence": 0.8700000000000001,
+   "score": 9,
+   "reason": "Matches your customer profile (independent, orthodontists).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "hello@mehta-enterprises.example",
+   "updatedAt": "2026-11-12T06:19:52.136Z",
+   "draft": {
+    "subject": "ChairTime × Mehta Enterprises",
+    "body": "Hi Mehta Enterprises team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across mehta-enterprises.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   },
+   "approvedAt": "2026-11-12T06:19:52.136Z",
+   "error": null,
+   "sent": {
+    "at": "2026-11-12T06:20:14.779Z",
+    "messageId": "<kp.m_b87dbc69df2c@chairtime.example>",
+    "dryRun": true,
+    "to": "hello@mehta-enterprises.example",
+    "subject": "ChairTime × Mehta Enterprises",
+    "text": "Hi Mehta Enterprises team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across mehta-enterprises.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime\n\n--\nYou received this one-time message because Mehta Enterprises matches what we offer. Reply \"unsubscribe\" and we won't contact you again.\nChairTime, 100 Congress Ave, Austin, TX 78701, USA"
+   },
+   "contactFirst": "Emma"
+  },
+  {
+   "id": "l_31efb5ccd0e0",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "gupta-solutions.example",
+   "url": "https://gupta-solutions.example/",
+   "company": "Gupta Solutions",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "orthodontists Maharashtra India",
+   "snippet": "Gupta Solutions is one of India's independent independent dental practices, serving customers from Maharashtra.",
+   "createdAt": "2026-11-12T06:19:41.144Z",
+   "status": "sent",
+   "category": "customer",
+   "title": "Gupta Solutions | Independent dental practices in Maharashtra",
+   "siteSummary": "Gupta Solutions is one of India's independent independent dental practices, serving customers from Maharashtra. About us. Gupta Solutions is an established independent dental practice based in Maharashtra, India. independent dental practices: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: contact@gupta-solutions.example",
+   "lang": "en",
+   "emails": [
+    "contact@gupta-solutions.example"
+   ],
+   "pages": [
+    "https://gupta-solutions.example/",
+    "https://gupta-solutions.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, practices).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "contact@gupta-solutions.example",
+   "updatedAt": "2026-11-12T06:19:52.136Z",
+   "draft": {
+    "subject": "ChairTime × Gupta Solutions",
+    "body": "Hi Gupta Solutions team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across gupta-solutions.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   },
+   "approvedAt": "2026-11-12T06:19:52.136Z",
+   "error": null,
+   "sent": {
+    "at": "2026-11-12T06:20:18.779Z",
+    "messageId": "<kp.m_cd25f02e0916@chairtime.example>",
+    "dryRun": true,
+    "to": "contact@gupta-solutions.example",
+    "subject": "ChairTime × Gupta Solutions",
+    "text": "Hi Gupta Solutions team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across gupta-solutions.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime\n\n--\nYou received this one-time message because Gupta Solutions matches what we offer. Reply \"unsubscribe\" and we won't contact you again.\nChairTime, 100 Congress Ave, Austin, TX 78701, USA"
+   }
+  },
+  {
+   "id": "l_9b459fa7fe75",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "mehta-reminder-solutions.example",
+   "url": "https://mehta-reminder-solutions.example/",
+   "company": "Mehta Reminder Solutions",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "orthodontists Maharashtra India",
+   "snippet": "Leading manufacturer of online scheduling and reminder since 1998.",
+   "createdAt": "2026-11-12T06:19:41.144Z",
+   "status": "classified",
+   "category": "competitor",
+   "title": "Mehta Reminder Solutions | Manufacturer of online scheduling and reminder",
+   "siteSummary": "Leading manufacturer of online scheduling and reminder since 1998. Mehta Reminder Solutions is a leading manufacturer of online scheduling and reminder. We design and produce online scheduling and reminder in our own factory in Maharashtra. Our engineers develop every model in-house and we ship to 30 countries. Email: hello@mehta-reminder-solutions.example",
+   "lang": "en",
+   "emails": [
+    "hello@mehta-reminder-solutions.example"
+   ],
+   "pages": [
+    "https://mehta-reminder-solutions.example/",
+    "https://mehta-reminder-solutions.example/contact"
+   ],
+   "confidence": 0.75,
+   "score": 2.5,
+   "reason": "Makes a similar product (online, scheduling, reminder).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "hello@mehta-reminder-solutions.example",
+   "updatedAt": "2026-11-12T06:19:43.499Z"
+  },
+  {
+   "id": "l_4b5686204d3b",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "banerjee-technologies.example",
+   "url": "https://banerjee-technologies.example/",
+   "company": "Banerjee Technologies",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "small dental groups Maharashtra India",
+   "snippet": "Banerjee Technologies is one of India's independent independent dental practices, serving customers from Maharashtra.",
+   "createdAt": "2026-11-12T06:19:44.427Z",
+   "status": "sent",
+   "category": "customer",
+   "title": "Banerjee Technologies | Independent dental practices in Maharashtra",
+   "siteSummary": "Banerjee Technologies is one of India's independent independent dental practices, serving customers from Maharashtra. About us. Banerjee Technologies is an established independent dental practice based in Maharashtra, India. independent dental practices: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: hello@banerjee-technologies.example",
+   "lang": "en",
+   "emails": [
+    "hello@banerjee-technologies.example"
+   ],
+   "pages": [
+    "https://banerjee-technologies.example/",
+    "https://banerjee-technologies.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, practices).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "hello@banerjee-technologies.example",
+   "updatedAt": "2026-11-12T06:19:52.136Z",
+   "draft": {
+    "subject": "ChairTime × Banerjee Technologies",
+    "body": "Hi Banerjee Technologies team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across banerjee-technologies.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   },
+   "approvedAt": "2026-11-12T06:19:52.136Z",
+   "error": null,
+   "sent": {
+    "at": "2026-11-12T06:20:22.779Z",
+    "messageId": "<kp.m_36aee6749cdd@chairtime.example>",
+    "dryRun": true,
+    "to": "hello@banerjee-technologies.example",
+    "subject": "ChairTime × Banerjee Technologies",
+    "text": "Hi Banerjee Technologies team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across banerjee-technologies.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime\n\n--\nYou received this one-time message because Banerjee Technologies matches what we offer. Reply \"unsubscribe\" and we won't contact you again.\nChairTime, 100 Congress Ave, Austin, TX 78701, USA"
+   }
+  },
+  {
+   "id": "l_35bbaa919228",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "iyer-reminder-technologies.example",
+   "url": "https://iyer-reminder-technologies.example/",
+   "company": "Iyer Reminder Technologies",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "small dental groups Maharashtra India",
+   "snippet": "Leading manufacturer of online scheduling and reminder since 1998.",
+   "createdAt": "2026-11-12T06:19:44.427Z",
+   "status": "classified",
+   "category": "competitor",
+   "title": "Iyer Reminder Technologies | Manufacturer of online scheduling and reminder",
+   "siteSummary": "Leading manufacturer of online scheduling and reminder since 1998. Iyer Reminder Technologies is a leading manufacturer of online scheduling and reminder. We design and produce online scheduling and reminder in our own factory in Maharashtra. Our engineers develop every model in-house and we ship to 30 countries. Email: info@iyer-reminder-technologies.example",
+   "lang": "en",
+   "emails": [
+    "info@iyer-reminder-technologies.example"
+   ],
+   "pages": [
+    "https://iyer-reminder-technologies.example/",
+    "https://iyer-reminder-technologies.example/contact"
+   ],
+   "confidence": 0.75,
+   "score": 2.5,
+   "reason": "Makes a similar product (online, scheduling, reminder).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "info@iyer-reminder-technologies.example",
+   "updatedAt": "2026-11-12T06:19:44.944Z"
+  },
+  {
+   "id": "l_3d99baf6725a",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "menon-solutions.example",
+   "url": "https://menon-solutions.example/",
+   "company": "Menon Solutions",
+   "country": "IN",
+   "location": "Maharashtra",
+   "query": "small dental groups Maharashtra India",
+   "snippet": "Menon Solutions is one of India's independent small dental groups, serving customers from Maharashtra.",
+   "createdAt": "2026-11-12T06:19:44.427Z",
+   "status": "replied",
+   "category": "customer",
+   "title": "Menon Solutions | Small dental groups in Maharashtra",
+   "siteSummary": "Menon Solutions is one of India's independent small dental groups, serving customers from Maharashtra. About us. Menon Solutions is an established small dental group based in Maharashtra, India. small dental groups: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: sales@menon-solutions.example",
+   "lang": "en",
+   "emails": [
+    "sales@menon-solutions.example"
+   ],
+   "pages": [
+    "https://menon-solutions.example/",
+    "https://menon-solutions.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, small).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "sales@menon-solutions.example",
+   "updatedAt": "2026-11-12T06:19:52.136Z",
+   "draft": {
+    "subject": "ChairTime × Menon Solutions",
+    "body": "Hi Menon Solutions team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across menon-solutions.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   },
+   "approvedAt": "2026-11-12T06:19:52.136Z",
+   "error": null,
+   "sent": {
+    "at": "2026-11-12T06:20:26.779Z",
+    "messageId": "<kp.m_55a22280037b@chairtime.example>",
+    "dryRun": true,
+    "to": "sales@menon-solutions.example",
+    "subject": "ChairTime × Menon Solutions",
+    "text": "Hi Menon Solutions team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across menon-solutions.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime\n\n--\nYou received this one-time message because Menon Solutions matches what we offer. Reply \"unsubscribe\" and we won't contact you again.\nChairTime, 100 Congress Ave, Austin, TX 78701, USA"
+   },
+   "contactFirst": "Daniel"
+  },
+  {
+   "id": "l_cf42f3bdf4e9",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "iyer-solutions.example",
+   "url": "https://iyer-solutions.example/",
+   "company": "Iyer Solutions",
+   "country": "IN",
+   "location": "Karnataka",
+   "query": "independent dental practices Karnataka India",
+   "snippet": "We supply manufacturers with parts, tooling and engineering services.",
+   "createdAt": "2026-11-12T06:19:46.523Z",
+   "status": "classified",
+   "category": "vendor",
+   "title": "Iyer Solutions | Components and services for manufacturers",
+   "siteSummary": "We supply manufacturers with parts, tooling and engineering services. Iyer Solutions supplies components, spare parts and engineering services to manufacturers. We help producers of online scheduling and reminder shorten lead times and reduce costs. ISO 9001 certified, based in Karnataka.",
+   "lang": "en",
+   "emails": [],
+   "pages": [
+    "https://iyer-solutions.example/",
+    "https://iyer-solutions.example/contact"
+   ],
+   "confidence": 0.7,
+   "score": 2.5,
+   "reason": "Sells products or services to companies like yours.",
+   "categorySource": "rules",
+   "industry": null,
+   "email": null,
+   "updatedAt": "2026-11-12T06:19:47.239Z"
+  },
+  {
+   "id": "l_7839f0ea2efa",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "reddy.example",
+   "url": "https://reddy.example/",
+   "company": "Reddy Pvt. Ltd.",
+   "country": "IN",
+   "location": "Karnataka",
+   "query": "independent dental practices Karnataka India",
+   "snippet": "Reddy Pvt. Ltd. is one of India's independent independent dental practices, serving customers from Karnataka.",
+   "createdAt": "2026-11-12T06:19:46.523Z",
+   "status": "sent",
+   "category": "customer",
+   "title": "Reddy Pvt. Ltd. | Independent dental practices in Karnataka",
+   "siteSummary": "Reddy Pvt. Ltd. is one of India's independent independent dental practices, serving customers from Karnataka. About us. Reddy Pvt. Ltd. is an established independent dental practice based in Karnataka, India. independent dental practices: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: hello@reddy.example",
+   "lang": "en",
+   "emails": [
+    "hello@reddy.example"
+   ],
+   "pages": [
+    "https://reddy.example/",
+    "https://reddy.example/contact"
+   ],
+   "confidence": 0.95,
+   "score": 10,
+   "reason": "Matches your customer profile (independent, dental, practices).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "hello@reddy.example",
+   "updatedAt": "2026-11-12T06:19:52.136Z",
+   "draft": {
+    "subject": "ChairTime × Reddy Pvt. Ltd.",
+    "body": "Hi Reddy Pvt. Ltd. team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across reddy.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   },
+   "approvedAt": "2026-11-12T06:19:52.136Z",
+   "error": null,
+   "sent": {
+    "at": "2026-11-12T06:20:30.779Z",
+    "messageId": "<kp.m_ad18037966f7@chairtime.example>",
+    "dryRun": true,
+    "to": "hello@reddy.example",
+    "subject": "ChairTime × Reddy Pvt. Ltd.",
+    "text": "Hi Reddy Pvt. Ltd. team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across reddy.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime\n\n--\nYou received this one-time message because Reddy Pvt. Ltd. matches what we offer. Reply \"unsubscribe\" and we won't contact you again.\nChairTime, 100 Congress Ave, Austin, TX 78701, USA"
+   }
+  },
+  {
+   "id": "l_91e90b9e2ea1",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "gupta-reminder.example",
+   "url": "https://gupta-reminder.example/",
+   "company": "Gupta Reminder Pvt. Ltd.",
+   "country": "IN",
+   "location": "Karnataka",
+   "query": "orthodontists Karnataka India",
+   "snippet": "Leading manufacturer of online scheduling and reminder since 1998.",
+   "createdAt": "2026-11-12T06:19:48.139Z",
+   "status": "classified",
+   "category": "competitor",
+   "title": "Gupta Reminder Pvt. Ltd. | Manufacturer of online scheduling and reminder",
+   "siteSummary": "Leading manufacturer of online scheduling and reminder since 1998. Gupta Reminder Pvt. Ltd. is a leading manufacturer of online scheduling and reminder. We design and produce online scheduling and reminder in our own factory in Karnataka. Our engineers develop every model in-house and we ship to 30 countries. Email: sales@gupta-reminder.example",
+   "lang": "en",
+   "emails": [
+    "sales@gupta-reminder.example"
+   ],
+   "pages": [
+    "https://gupta-reminder.example/",
+    "https://gupta-reminder.example/contact"
+   ],
+   "confidence": 0.75,
+   "score": 2.5,
+   "reason": "Makes a similar product (online, scheduling, reminder).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "sales@gupta-reminder.example",
+   "updatedAt": "2026-11-12T06:19:48.811Z"
+  },
+  {
+   "id": "l_0dc375f2e146",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "nair-technologies.example",
+   "url": "https://nair-technologies.example/",
+   "company": "Nair Technologies",
+   "country": "IN",
+   "location": "Karnataka",
+   "query": "orthodontists Karnataka India",
+   "snippet": "Nair Technologies is one of India's independent orthodontists, serving customers from Karnataka.",
+   "createdAt": "2026-11-12T06:19:48.139Z",
+   "status": "sent",
+   "category": "customer",
+   "title": "Nair Technologies | Orthodontists in Karnataka",
+   "siteSummary": "Nair Technologies is one of India's independent orthodontists, serving customers from Karnataka. About us. Nair Technologies is an established orthodontist based in Karnataka, India. orthodontists: that's what our customers know us for. We have 40 staff and serve more than 600 business customers. We are always looking for new products and suppliers to add to our range, and our purchasing team reviews new offers every quarter. Contact our team for enquiries. Email: contact@nair-technologies.example",
+   "lang": "en",
+   "emails": [
+    "contact@nair-technologies.example"
+   ],
+   "pages": [
+    "https://nair-technologies.example/",
+    "https://nair-technologies.example/contact"
+   ],
+   "confidence": 0.8700000000000001,
+   "score": 9,
+   "reason": "Matches your customer profile (independent, orthodontists).",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "contact@nair-technologies.example",
+   "updatedAt": "2026-11-12T06:19:52.136Z",
+   "draft": {
+    "subject": "ChairTime × Nair Technologies",
+    "body": "Hi Nair Technologies team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across nair-technologies.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime",
+    "language": "en",
+    "source": "template"
+   },
+   "approvedAt": "2026-11-12T06:19:52.136Z",
+   "error": null,
+   "sent": {
+    "at": "2026-11-12T06:20:34.778Z",
+    "messageId": "<kp.m_ea2976c57966@chairtime.example>",
+    "dryRun": true,
+    "to": "contact@nair-technologies.example",
+    "subject": "ChairTime × Nair Technologies",
+    "text": "Hi Nair Technologies team,\n\nI'm Priya Menon from ChairTime. We build ChairTime, online scheduling and reminder software for dental clinics. We are looking for independent dental practices, orthodontists and small dental groups that still book appointments by phone.\n\nI came across nair-technologies.example and it looks like a good fit. Would you be open to a short call next week?\n\nBest,\nPriya Menon\nHead of Partnerships, ChairTime\n\n--\nYou received this one-time message because Nair Technologies matches what we offer. Reply \"unsubscribe\" and we won't contact you again.\nChairTime, 100 Congress Ave, Austin, TX 78701, USA"
+   }
+  },
+  {
+   "id": "l_061343c21679",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "rao-technologies.example",
+   "url": "https://rao-technologies.example/",
+   "company": "Rao Technologies",
+   "country": "IN",
+   "location": "Karnataka",
+   "query": "orthodontists Karnataka India",
+   "snippet": "We supply manufacturers with parts, tooling and engineering services.",
+   "createdAt": "2026-11-12T06:19:48.139Z",
+   "status": "classified",
+   "category": "vendor",
+   "title": "Rao Technologies | Components and services for manufacturers",
+   "siteSummary": "We supply manufacturers with parts, tooling and engineering services. Rao Technologies supplies components, spare parts and engineering services to manufacturers. We help producers of online scheduling and reminder shorten lead times and reduce costs. ISO 9001 certified, based in Karnataka. Email: sales@rao-technologies.example",
+   "lang": "en",
+   "emails": [
+    "sales@rao-technologies.example"
+   ],
+   "pages": [
+    "https://rao-technologies.example/",
+    "https://rao-technologies.example/contact"
+   ],
+   "confidence": 0.7,
+   "score": 2.5,
+   "reason": "Sells products or services to companies like yours.",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "sales@rao-technologies.example",
+   "updatedAt": "2026-11-12T06:19:49.045Z"
+  },
+  {
+   "id": "l_8122c3cbf594",
+   "campaignId": "c_411ae3bccc46",
+   "domain": "kapoor-technologies.example",
+   "url": "https://kapoor-technologies.example/",
+   "company": "Kapoor Technologies",
+   "country": "IN",
+   "location": "Karnataka",
+   "query": "orthodontists Karnataka India",
+   "snippet": "Complementary services with a partner programme for equipment brands.",
+   "createdAt": "2026-11-12T06:19:48.139Z",
+   "status": "classified",
+   "category": "partner",
+   "title": "Kapoor Technologies | Software and consulting",
+   "siteSummary": "Complementary services with a partner programme for equipment brands. Kapoor Technologies offers training, installation and maintenance planning. Our partner programme connects equipment brands with end users, and our platform integrates with leading systems. Based in Karnataka. Email: sales@kapoor-technologies.example",
+   "lang": "en",
+   "emails": [
+    "sales@kapoor-technologies.example"
+   ],
+   "pages": [
+    "https://kapoor-technologies.example/",
+    "https://kapoor-technologies.example/contact"
+   ],
+   "confidence": 0.65,
+   "score": 4,
+   "reason": "Complementary business that could refer or integrate, not a buyer.",
+   "categorySource": "rules",
+   "industry": null,
+   "email": "sales@kapoor-technologies.example",
+   "updatedAt": "2026-11-12T06:19:49.944Z"
+  }
+ ],
+ "replies": [
+  {
+   "id": "r_907e6294f66b",
+   "leadId": "l_3d99baf6725a",
+   "campaignId": "c_411ae3bccc46",
+   "company": "Menon Solutions",
+   "domain": "menon-solutions.example",
+   "lang": "en",
+   "from": "sales@menon-solutions.example",
+   "fromName": "Daniel (Menon Solutions)",
+   "subject": "Re: ChairTime × Menon Solutions",
+   "text": "Hello Priya,\n\nWhat are your delivery times to India, and is there a minimum order quantity?\n\nThanks,\nDaniel\nMenon Solutions",
+   "messageId": "<sim.m_ad772f8d0c7d@menon-solutions.example>",
+   "receivedAt": "2026-11-12T06:20:55.599Z",
+   "intent": "question",
+   "summary": "What are your delivery times to India, and is there a minimum order quantity? Thanks,",
+   "translation": null,
+   "draft": "Hi Daniel,\n\nThank you for your reply. I'm glad to help: I'll send the details you asked for today. Would a 20-minute call next week suit you? Let me know a time that works.\n\nBest regards,\nPriya Menon\nChairTime",
+   "analysisSource": "rules",
+   "unread": true,
+   "handled": false,
+   "simulated": true
+  },
+  {
+   "id": "r_484bdf1687da",
+   "leadId": "l_f702752586d5",
+   "campaignId": "c_411ae3bccc46",
+   "company": "Mehta Enterprises",
+   "domain": "mehta-enterprises.example",
+   "lang": "en",
+   "from": "hello@mehta-enterprises.example",
+   "fromName": "Emma (Mehta Enterprises)",
+   "subject": "Re: ChairTime × Mehta Enterprises",
+   "text": "Hello Priya,\n\nWhat are your delivery times to India, and is there a minimum order quantity?\n\nThanks,\nEmma\nMehta Enterprises",
+   "messageId": "<sim.m_30879b1da4be@mehta-enterprises.example>",
+   "receivedAt": "2026-11-12T06:20:47.172Z",
+   "intent": "question",
+   "summary": "What are your delivery times to India, and is there a minimum order quantity? Thanks,",
+   "translation": null,
+   "draft": "Hi Emma,\n\nThank you for your reply. I'm glad to help: I'll send the details you asked for today. Would a 20-minute call next week suit you? Let me know a time that works.\n\nBest regards,\nPriya Menon\nChairTime",
+   "analysisSource": "rules",
+   "unread": true,
+   "handled": false,
+   "simulated": true
+  },
+  {
+   "id": "r_899260213630",
+   "leadId": "l_0025ea6c2079",
+   "campaignId": "c_411ae3bccc46",
+   "company": "Foster & Sons",
+   "domain": "foster-and-sons.example",
+   "lang": "en",
+   "from": "sales@foster-and-sons.example",
+   "fromName": "Olivia (Foster & Sons)",
+   "subject": "Re: ChairTime × Foster & Sons",
+   "text": "Thank you for your message. I'm out of the office until Monday and will reply when I'm back.\n\nOlivia",
+   "messageId": "<sim.m_1dafefd17695@foster-and-sons.example>",
+   "receivedAt": "2026-11-12T06:20:42.003Z",
+   "intent": "out_of_office",
+   "summary": "Thank you for your message. I'm out of the office until Monday and will reply when I'm back. Olivia",
+   "translation": null,
+   "draft": "",
+   "analysisSource": "rules",
+   "unread": true,
+   "handled": false,
+   "simulated": true
+  },
+  {
+   "id": "r_249264c8b0eb",
+   "leadId": "l_60c477c4738c",
+   "campaignId": "c_411ae3bccc46",
+   "company": "Parker Solutions",
+   "domain": "parker-solutions.example",
+   "lang": "en",
+   "from": "info@parker-solutions.example",
+   "fromName": "Emma (Parker Solutions)",
+   "subject": "Re: ChairTime × Parker Solutions",
+   "text": "Hi Priya,\n\nThanks for your email, the timing is good. Could you send pricing and a short overview? A call next Tuesday or Thursday afternoon would also work for us.\n\nBest regards,\nEmma\nParker Solutions",
+   "messageId": "<sim.m_7feb516be991@parker-solutions.example>",
+   "receivedAt": "2026-11-12T06:20:27.906Z",
+   "intent": "interested",
+   "summary": "Thanks for your email, the timing is good. Could you send pricing and a short overview? A call next Tuesday or Thursday afternoon would also work for us. Best regards,",
+   "translation": null,
+   "draft": "Hi Emma,\n\nThank you for your reply. I'm glad to help: I'll send the details you asked for today. Would a 20-minute call next week suit you? Let me know a time that works.\n\nBest regards,\nPriya Menon\nChairTime",
+   "analysisSource": "rules",
+   "unread": true,
+   "handled": false,
+   "simulated": true
+  }
+ ],
+ "activity": [
+  {
+   "id": "a_eb7b398ec3c3",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "reply",
+   "text": "Has questions: reply from Daniel (Menon Solutions)",
+   "at": "2026-11-12T06:20:55.599Z",
+   "leadId": "l_3d99baf6725a"
+  },
+  {
+   "id": "a_7bdf6dad06b5",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "reply",
+   "text": "Has questions: reply from Emma (Mehta Enterprises)",
+   "at": "2026-11-12T06:20:47.172Z",
+   "leadId": "l_f702752586d5"
+  },
+  {
+   "id": "a_83c2559a10d1",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "reply",
+   "text": "Out of office: reply from Olivia (Foster & Sons)",
+   "at": "2026-11-12T06:20:42.003Z",
+   "leadId": "l_0025ea6c2079"
+  },
+  {
+   "id": "a_3d74e787fb6f",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "sent",
+   "text": "Dry run: email recorded to Nair Technologies <contact@nair-technologies.example>",
+   "at": "2026-11-12T06:20:34.778Z",
+   "leadId": "l_0dc375f2e146"
+  },
+  {
+   "id": "a_06c85f89d3fd",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "sent",
+   "text": "Dry run: email recorded to Reddy Pvt. Ltd. <hello@reddy.example>",
+   "at": "2026-11-12T06:20:30.779Z",
+   "leadId": "l_7839f0ea2efa"
+  },
+  {
+   "id": "a_f71f5fccfbe8",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "reply",
+   "text": "Interested: reply from Emma (Parker Solutions)",
+   "at": "2026-11-12T06:20:27.906Z",
+   "leadId": "l_60c477c4738c"
+  },
+  {
+   "id": "a_5c7f5d34d770",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "sent",
+   "text": "Dry run: email recorded to Menon Solutions <sales@menon-solutions.example>",
+   "at": "2026-11-12T06:20:26.779Z",
+   "leadId": "l_3d99baf6725a"
+  },
+  {
+   "id": "a_8ce5cfc2639e",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "sent",
+   "text": "Dry run: email recorded to Banerjee Technologies <hello@banerjee-technologies.example>",
+   "at": "2026-11-12T06:20:22.779Z",
+   "leadId": "l_4b5686204d3b"
+  },
+  {
+   "id": "a_a201dd5255cc",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "sent",
+   "text": "Dry run: email recorded to Gupta Solutions <contact@gupta-solutions.example>",
+   "at": "2026-11-12T06:20:18.779Z",
+   "leadId": "l_31efb5ccd0e0"
+  },
+  {
+   "id": "a_b7e271bb75d2",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "sent",
+   "text": "Dry run: email recorded to Mehta Enterprises <hello@mehta-enterprises.example>",
+   "at": "2026-11-12T06:20:14.779Z",
+   "leadId": "l_f702752586d5"
+  },
+  {
+   "id": "a_70517c0cb493",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "sent",
+   "text": "Dry run: email recorded to Foster & Sons <sales@foster-and-sons.example>",
+   "at": "2026-11-12T06:20:10.779Z",
+   "leadId": "l_0025ea6c2079"
+  },
+  {
+   "id": "a_23d26e4e2d74",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "sent",
+   "text": "Dry run: email recorded to Walsh Partners <info@walsh-partners.example>",
+   "at": "2026-11-12T06:20:06.779Z",
+   "leadId": "l_33fe7ece0b14"
+  },
+  {
+   "id": "a_297a3a6a7119",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "sent",
+   "text": "Dry run: email recorded to Parker Solutions <info@parker-solutions.example>",
+   "at": "2026-11-12T06:20:02.779Z",
+   "leadId": "l_60c477c4738c"
+  },
+  {
+   "id": "a_cd93d6d525b0",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "sent",
+   "text": "Dry run: email recorded to Clarke & Sons <contact@clarke-and-sons.example>",
+   "at": "2026-11-12T06:19:58.779Z",
+   "leadId": "l_d05a0878bf6c"
+  },
+  {
+   "id": "a_02e1f5a01318",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "sent",
+   "text": "Dry run: email recorded to Morgan & Sons <contact@morgan-and-sons.example>",
+   "at": "2026-11-12T06:19:54.779Z",
+   "leadId": "l_91a9f3278041"
+  },
+  {
+   "id": "a_5f24fb8860d5",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "info",
+   "text": "Rejected: Gupta Pvt. Ltd.",
+   "at": "2026-11-12T06:19:52.251Z",
+   "leadId": "l_9067ec1b7889"
+  },
+  {
+   "id": "a_e0b32511b9c3",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "approved",
+   "text": "Approved: Mehta Enterprises",
+   "at": "2026-11-12T06:19:52.136Z",
+   "leadId": "l_f702752586d5"
+  },
+  {
+   "id": "a_703e32004e1c",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "approved",
+   "text": "Approved: Gupta Solutions",
+   "at": "2026-11-12T06:19:52.136Z",
+   "leadId": "l_31efb5ccd0e0"
+  },
+  {
+   "id": "a_e4c889967761",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "approved",
+   "text": "Approved: Menon Solutions",
+   "at": "2026-11-12T06:19:52.136Z",
+   "leadId": "l_3d99baf6725a"
+  },
+  {
+   "id": "a_1c8e228ff8c9",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "approved",
+   "text": "Approved: Banerjee Technologies",
+   "at": "2026-11-12T06:19:52.136Z",
+   "leadId": "l_4b5686204d3b"
+  },
+  {
+   "id": "a_c380e1568975",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "approved",
+   "text": "Approved: Reddy Pvt. Ltd.",
+   "at": "2026-11-12T06:19:52.136Z",
+   "leadId": "l_7839f0ea2efa"
+  },
+  {
+   "id": "a_cc533d533ed6",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "approved",
+   "text": "Approved: Nair Technologies",
+   "at": "2026-11-12T06:19:52.136Z",
+   "leadId": "l_0dc375f2e146"
+  },
+  {
+   "id": "a_316bf1711a56",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "approved",
+   "text": "Approved: Morgan & Sons",
+   "at": "2026-11-12T06:19:52.136Z",
+   "leadId": "l_91a9f3278041"
+  },
+  {
+   "id": "a_497befecc82b",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "approved",
+   "text": "Approved: Clarke & Sons",
+   "at": "2026-11-12T06:19:52.136Z",
+   "leadId": "l_d05a0878bf6c"
+  },
+  {
+   "id": "a_ee8a9bb0f92b",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "approved",
+   "text": "Approved: Parker Solutions",
+   "at": "2026-11-12T06:19:52.136Z",
+   "leadId": "l_60c477c4738c"
+  },
+  {
+   "id": "a_dc6b49957a66",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "approved",
+   "text": "Approved: Walsh Partners",
+   "at": "2026-11-12T06:19:52.136Z",
+   "leadId": "l_33fe7ece0b14"
+  },
+  {
+   "id": "a_96030abe3d16",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "approved",
+   "text": "Approved: Foster & Sons",
+   "at": "2026-11-12T06:19:52.136Z",
+   "leadId": "l_0025ea6c2079"
+  },
+  {
+   "id": "a_d6ca7492db53",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "info",
+   "text": "Search finished. Review the drafted emails to send them.",
+   "at": "2026-11-12T06:19:49.944Z"
+  },
+  {
+   "id": "a_5b64deb7b00e",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "info",
+   "text": "Reached your target of 22 customers",
+   "at": "2026-11-12T06:19:49.944Z"
+  },
+  {
+   "id": "a_f84e1da6a7d9",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "partner",
+   "text": "Marked as partner: Kapoor Technologies",
+   "at": "2026-11-12T06:19:49.944Z",
+   "leadId": "l_8122c3cbf594"
+  },
+  {
+   "id": "a_29f403298768",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "vendor",
+   "text": "Marked as vendor: Rao Technologies",
+   "at": "2026-11-12T06:19:49.045Z",
+   "leadId": "l_061343c21679"
+  },
+  {
+   "id": "a_be4c7838089e",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Nair Technologies. Email drafted for your review",
+   "at": "2026-11-12T06:19:48.940Z",
+   "leadId": "l_0dc375f2e146"
+  },
+  {
+   "id": "a_a48b3bdfdcc6",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "competitor",
+   "text": "Marked as competitor: Gupta Reminder Pvt. Ltd.",
+   "at": "2026-11-12T06:19:48.811Z",
+   "leadId": "l_91e90b9e2ea1"
+  },
+  {
+   "id": "a_e4794bed0913",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "search",
+   "text": "Searching \"orthodontists Karnataka India\"",
+   "at": "2026-11-12T06:19:47.239Z"
+  },
+  {
+   "id": "a_510c20245f18",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "vendor",
+   "text": "Marked as vendor: Iyer Solutions",
+   "at": "2026-11-12T06:19:47.239Z",
+   "leadId": "l_cf42f3bdf4e9"
+  },
+  {
+   "id": "a_f70fdbb3053f",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Reddy Pvt. Ltd. Email drafted for your review",
+   "at": "2026-11-12T06:19:47.221Z",
+   "leadId": "l_7839f0ea2efa"
+  },
+  {
+   "id": "a_e7367a2ff65a",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "search",
+   "text": "Searching \"independent dental practices Karnataka India\"",
+   "at": "2026-11-12T06:19:45.622Z"
+  },
+  {
+   "id": "a_9fb99f31415b",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Banerjee Technologies. Email drafted for your review",
+   "at": "2026-11-12T06:19:45.622Z",
+   "leadId": "l_4b5686204d3b"
+  },
+  {
+   "id": "a_0097e0e36ccd",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "competitor",
+   "text": "Marked as competitor: Iyer Reminder Technologies",
+   "at": "2026-11-12T06:19:44.944Z",
+   "leadId": "l_35bbaa919228"
+  },
+  {
+   "id": "a_96b79678655d",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Menon Solutions. Email drafted for your review",
+   "at": "2026-11-12T06:19:44.936Z",
+   "leadId": "l_3d99baf6725a"
+  },
+  {
+   "id": "a_ad0020dc3587",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "search",
+   "text": "Searching \"small dental groups Maharashtra India\"",
+   "at": "2026-11-12T06:19:43.527Z"
+  },
+  {
+   "id": "a_e0821135f4a7",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Gupta Solutions. Email drafted for your review",
+   "at": "2026-11-12T06:19:43.527Z",
+   "leadId": "l_31efb5ccd0e0"
+  },
+  {
+   "id": "a_ce28af54aa27",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "competitor",
+   "text": "Marked as competitor: Mehta Reminder Solutions",
+   "at": "2026-11-12T06:19:43.499Z",
+   "leadId": "l_9b459fa7fe75"
+  },
+  {
+   "id": "a_da52979afcaf",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Mehta Enterprises. Email drafted for your review",
+   "at": "2026-11-12T06:19:42.304Z",
+   "leadId": "l_f702752586d5"
+  },
+  {
+   "id": "a_53c23eab3fa6",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Iyer Pvt. Ltd., but no email address on the site",
+   "at": "2026-11-12T06:19:42.114Z",
+   "leadId": "l_74e1085b6317"
+  },
+  {
+   "id": "a_b990677f4207",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Nair Industries, but no email address on the site",
+   "at": "2026-11-12T06:19:41.634Z",
+   "leadId": "l_55aecf3b77c1"
+  },
+  {
+   "id": "a_39d1e9c90dfe",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "search",
+   "text": "Searching \"orthodontists Maharashtra India\"",
+   "at": "2026-11-12T06:19:40.244Z"
+  },
+  {
+   "id": "a_8c930a0a77a3",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Gupta Pvt. Ltd. Email drafted for your review",
+   "at": "2026-11-12T06:19:40.244Z",
+   "leadId": "l_9067ec1b7889"
+  },
+  {
+   "id": "a_3e07a885d926",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "competitor",
+   "text": "Marked as competitor: Desai Reminder Industries",
+   "at": "2026-11-12T06:19:39.653Z",
+   "leadId": "l_4d8c5edc48d9"
+  },
+  {
+   "id": "a_e08b12ed6a45",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "competitor",
+   "text": "Marked as competitor: Patel Reminder & Co.",
+   "at": "2026-11-12T06:19:39.189Z",
+   "leadId": "l_b42b3bae34ce"
+  },
+  {
+   "id": "a_c00b40b5225b",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "irrelevant",
+   "text": "Marked as not relevant: Top 50 independent dental practices in India",
+   "at": "2026-11-12T06:19:39.148Z",
+   "leadId": "l_3491865c18f5"
+  },
+  {
+   "id": "a_84b03bb59ffa",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "competitor",
+   "text": "Marked as competitor: Iyer Reminder & Co.",
+   "at": "2026-11-12T06:19:38.693Z",
+   "leadId": "l_0b4de167ffed"
+  },
+  {
+   "id": "a_e5f60123c892",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "search",
+   "text": "Searching \"independent dental practices Maharashtra India\"",
+   "at": "2026-11-12T06:19:37.079Z"
+  },
+  {
+   "id": "a_5784df403d06",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Foster & Sons. Email drafted for your review",
+   "at": "2026-11-12T06:19:37.079Z",
+   "leadId": "l_0025ea6c2079"
+  },
+  {
+   "id": "a_a7b27f91a108",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "competitor",
+   "text": "Marked as competitor: Reed Reminder Supply Co.",
+   "at": "2026-11-12T06:19:36.100Z",
+   "leadId": "l_52dbc1024c85"
+  },
+  {
+   "id": "a_996a04a13902",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Walsh Partners. Email drafted for your review",
+   "at": "2026-11-12T06:19:36.050Z",
+   "leadId": "l_33fe7ece0b14"
+  },
+  {
+   "id": "a_2e6879128db2",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Parker Solutions. Email drafted for your review",
+   "at": "2026-11-12T06:19:36.021Z",
+   "leadId": "l_60c477c4738c"
+  },
+  {
+   "id": "a_4b4e5d0952d4",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "search",
+   "text": "Searching \"small dental groups California USA\"",
+   "at": "2026-11-12T06:19:33.881Z"
+  },
+  {
+   "id": "a_e9962009ee94",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "partner",
+   "text": "Marked as partner: Reed Trading",
+   "at": "2026-11-12T06:19:33.881Z",
+   "leadId": "l_f6713f55aa21"
+  },
+  {
+   "id": "a_eeb91d15733f",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Clarke & Sons. Email drafted for your review",
+   "at": "2026-11-12T06:19:32.867Z",
+   "leadId": "l_d05a0878bf6c"
+  },
+  {
+   "id": "a_5683012ffd6d",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "vendor",
+   "text": "Marked as vendor: Bennett Trading",
+   "at": "2026-11-12T06:19:32.251Z",
+   "leadId": "l_170d5c38d1db"
+  },
+  {
+   "id": "a_4bc387c81caa",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "vendor",
+   "text": "Marked as vendor: Reed Supply Co.",
+   "at": "2026-11-12T06:19:32.210Z",
+   "leadId": "l_ca8956b037a8"
+  },
+  {
+   "id": "a_92c179a2b741",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "search",
+   "text": "Searching \"orthodontists California USA\"",
+   "at": "2026-11-12T06:19:30.663Z"
+  },
+  {
+   "id": "a_8ce2e5654b0d",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Morgan & Sons. Email drafted for your review",
+   "at": "2026-11-12T06:19:30.663Z",
+   "leadId": "l_91a9f3278041"
+  },
+  {
+   "id": "a_5d6ea6f5e28c",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "partner",
+   "text": "Marked as partner: Parker Group",
+   "at": "2026-11-12T06:19:30.562Z",
+   "leadId": "l_2ae03a636236"
+  },
+  {
+   "id": "a_d017e9ff27ff",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Turner Group. Email drafted for your review",
+   "at": "2026-11-12T06:19:29.908Z",
+   "leadId": "l_c314e212d8cb"
+  },
+  {
+   "id": "a_8339a579b222",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "search",
+   "text": "Searching \"independent dental practices California USA\"",
+   "at": "2026-11-12T06:19:28.463Z"
+  },
+  {
+   "id": "a_21c962640239",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Bennett Solutions. Email drafted for your review",
+   "at": "2026-11-12T06:19:28.463Z",
+   "leadId": "l_d0aa4653b818"
+  },
+  {
+   "id": "a_affed26a4b50",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Clarke Solutions. Email drafted for your review",
+   "at": "2026-11-12T06:19:27.659Z",
+   "leadId": "l_103e59a9ebbc"
+  },
+  {
+   "id": "a_c58f390ba8e9",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "competitor",
+   "text": "Marked as competitor: Morgan Reminder Solutions",
+   "at": "2026-11-12T06:19:27.580Z",
+   "leadId": "l_83483ed7645f"
+  },
+  {
+   "id": "a_159011ffff40",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "competitor",
+   "text": "Marked as competitor: Bennett Reminder Trading",
+   "at": "2026-11-12T06:19:27.326Z",
+   "leadId": "l_04d2ad9cae9a"
+  },
+  {
+   "id": "a_f9e15a87f81a",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "search",
+   "text": "Searching \"small dental groups Texas USA\"",
+   "at": "2026-11-12T06:19:25.794Z"
+  },
+  {
+   "id": "a_da8d4d9f1bc4",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Morgan Solutions. Email drafted for your review",
+   "at": "2026-11-12T06:19:25.794Z",
+   "leadId": "l_f45c37def903"
+  },
+  {
+   "id": "a_2fd90b679e0f",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "partner",
+   "text": "Marked as partner: Reed Industries",
+   "at": "2026-11-12T06:19:25.699Z",
+   "leadId": "l_1b8799562e54"
+  },
+  {
+   "id": "a_1290d5444881",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "search",
+   "text": "Searching \"orthodontists Texas USA\"",
+   "at": "2026-11-12T06:19:23.805Z"
+  },
+  {
+   "id": "a_131d554a360d",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Walsh Trading. Email drafted for your review",
+   "at": "2026-11-12T06:19:23.805Z",
+   "leadId": "l_19ff13743c8b"
+  },
+  {
+   "id": "a_c507a68712d9",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "partner",
+   "text": "Marked as partner: Parker & Sons",
+   "at": "2026-11-12T06:19:23.700Z",
+   "leadId": "l_45e4b601cf16"
+  },
+  {
+   "id": "a_1aa090066330",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Holland Supply Co., but no email address on the site",
+   "at": "2026-11-12T06:19:23.167Z",
+   "leadId": "l_3780bc92a78b"
+  },
+  {
+   "id": "a_d66da282c0d7",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Reed Partners. Email drafted for your review",
+   "at": "2026-11-12T06:19:22.676Z",
+   "leadId": "l_2389697291ae"
+  },
+  {
+   "id": "a_392f21dbc84a",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "irrelevant",
+   "text": "Marked as not relevant: Top 50 orthodontists in United States",
+   "at": "2026-11-12T06:19:22.582Z",
+   "leadId": "l_9c91c188fca0"
+  },
+  {
+   "id": "a_675e11d34628",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "customer",
+   "text": "Customer found: Hayes Trading. Email drafted for your review",
+   "at": "2026-11-12T06:19:22.522Z",
+   "leadId": "l_910efa181575"
+  },
+  {
+   "id": "a_f65394e783c1",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "search",
+   "text": "Searching \"independent dental practices Texas USA\"",
+   "at": "2026-11-12T06:19:20.585Z"
+  },
+  {
+   "id": "a_033e366f754a",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "info",
+   "text": "Campaign started. Searching United States first",
+   "at": "2026-11-12T06:19:20.585Z"
+  },
+  {
+   "id": "a_65bb11335f14",
+   "campaignId": "c_411ae3bccc46",
+   "kind": "info",
+   "text": "Campaign created",
+   "at": "2026-11-12T06:19:20.584Z"
+  }
+ ],
+ "suppression": [],
+ "meta": {
+  "sentByDay": {
+   "2026-11-12": 11
+  }
+ }
+}

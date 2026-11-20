@@ -258,7 +258,7 @@ details.orig .body{margin-top:8px;padding:12px;background:var(--sunk);border-rad
 .st-no_email{background:var(--warn-soft);color:var(--warn)}
 .st-failed,.st-bounced{background:var(--bad-soft);color:var(--bad)}
 .i-interested{background:var(--ok-soft);color:var(--ok)} .i-question{background:var(--info-soft);color:var(--info)}
-.i-not_interested,.i-unsubscribe,.i-bounce{background:var(--bad-soft);color:var(--bad)} .i-out_of_office{background:var(--sunk);color:var(--muted)}
+.i-not_interested,.i-unsubscribe,.i-bounce{background:var(--bad-soft);color:var(--bad)} .i-out_of_office{background:var(--sunk);color:var(--muted)} .i-unclear{background:var(--warn-soft);color:var(--warn)}
 
 .seg{display:flex;gap:2px;background:var(--sunk);border-radius:9px;padding:3px;flex-wrap:wrap}
 .seg button{border:0;background:none;border-radius:7px;padding:5px 11px;font-weight:600;font-size:.8rem;color:var(--muted);cursor:pointer;display:inline-flex;gap:6px;align-items:center}

@@ -1,8 +1,8 @@
 "use client";
-// Replies: intent, summary, translation, the email they answer, and a suggested answer.
+// Replies: intent, summary, the email they answer, and a box to write an answer.
 import { useCallback, useEffect, useRef, useState } from "react";
 import { api } from "@/lib/api";
-import { ago, copyText, short } from "@/lib/format";
+import { ago, short } from "@/lib/format";
 import type { ReplyOut } from "@/lib/types";
 import { useApp, useBusy, usePoll } from "@/components/AppContext";
 import { IntentPill, ModeBanner } from "@/components/ui";
@@ -24,13 +24,13 @@ export default function InboxPage() {
   const r = list.find(x => x.id === sel) || list[0];
   useEffect(() => {
     if (!r) return;
-    setAnswer(r.answers?.length ? "" : r.draft);
+    setAnswer("");
     if (r.unread) api.updateReply(r.id, { unread: false }).then(() => { load(); refresh(); });
     // only when the selected reply changes
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [r?.id]);
 
-  const needsAnswer = can.edit && r && (["interested", "question"].includes(r.intent) || r.draft);
+  const needsAnswer = can.edit && r && ["interested", "question"].includes(r.intent);
   return (
     <>
       <ModeBanner />
@@ -68,14 +68,13 @@ export default function InboxPage() {
               {(r.answers || []).map(a => <div key={a.messageId} className="msg"><span className="eyebrow">Your answer · {ago(a.at)}{a.dryRun ? " · dry run" : ""}</span><div className="body">{a.body}</div></div>)}
               {needsAnswer && (
                 <div className="field draft">
-                  <label htmlFor="ans">{r.answers?.length ? "Another answer" : "Suggested answer"}, in {langName(r.lang)}</label>
-                  <textarea id="ans" ref={ta} value={answer} onChange={e => setAnswer(e.target.value)} onBlur={() => api.updateReply(r.id, { draft: answer }).catch(() => {})} />
+                  <label htmlFor="ans">{r.answers?.length ? "Another answer" : "Your answer"}, in {langName(r.lang)}</label>
+                  <textarea id="ans" ref={ta} value={answer} placeholder="Write your answer here…" onChange={e => setAnswer(e.target.value)} />
                 </div>
               )}
               <div className="qactions">
                 {needsAnswer && <>
-                  <button className="btn primary" disabled={busy} onClick={() => run(async () => { const res = await api.answer(r.id, answer); toast(res.dryRun ? "Answer recorded (dry run, not sent)" : "Answer sent"); await load(); setAnswer(""); })}>Send answer</button>
-                  <button className="btn" onClick={async () => toast((await copyText(answer, ta.current)) ? "Copied" : "Press Ctrl+C or ⌘C to copy")}>Copy</button>
+                  <button className="btn primary" disabled={busy || !answer.trim()} onClick={() => run(async () => { const res = await api.answer(r.id, answer); toast(res.dryRun ? "Answer recorded (dry run, not sent)" : "Answer sent"); await load(); setAnswer(""); })}>Send answer</button>
                 </>}
                 {can.edit && <button className="btn" disabled={busy} onClick={() => run(async () => { await api.updateReply(r.id, { handled: !r.handled }); await load(); })}>{r.handled ? "Mark as open" : "Mark as handled"}</button>}
                 <button className="btn ghost" onClick={() => setOpenLead(r.leadId)}>Lead details</button>

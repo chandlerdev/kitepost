@@ -5,7 +5,7 @@ export type LeadStatus =
   | "analyzing" | "classified" | "review" | "no_email" | "suppressed" | "approved"
   | "sending" | "sent" | "replied" | "bounced" | "failed" | "rejected" | "skipped";
 export type CampaignStatus = "draft" | "running" | "paused" | "done";
-export type Intent = "interested" | "question" | "not_interested" | "unsubscribe" | "out_of_office" | "bounce";
+export type Intent = "interested" | "question" | "not_interested" | "unsubscribe" | "out_of_office" | "bounce" | "unclear";
 export type Source = "claude" | "rules" | "you" | "template";
 
 export interface Profile { id: string; name: string; why: string; keywords: string[]; on: boolean }

@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.time.Instant;
 import java.util.*;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.regex.Pattern;
 
 /** Reads new messages from the inbox (read-only) and records the ones that answer our emails. */
 @Component
@@ -95,12 +96,46 @@ public class ImapPoller {
         Address[] from = m.getFrom();
         String address = null, name = null;
         if (from != null && from.length > 0 && from[0] instanceof InternetAddress ia) { address = ia.getAddress(); name = ia.getPersonal(); }
+        String kind = kindOf(m);
+        boolean fromSystem = address != null && address.toLowerCase(Locale.ROOT).matches("^(mailer-daemon|postmaster)@.*");
+        // A delivery report comes from the mail system, not from the company: find which email it is about by our own Message-ID inside it.
+        if ("bounce".equals(kind) || fromSystem) ourIds(m, ids, 0);
         Optional<LeadEntity> lead = recorder.match(ids, address);
         if (lead.isEmpty()) return;
         String[] mid = m.getHeader("Message-ID");
         Date received = m.getReceivedDate() != null ? m.getReceivedDate() : m.getSentDate();
         recorder.record(lead.get(), new ReplyAnalyzer.Incoming(address, name, m.getSubject(), textOf(m),
-                mid != null && mid.length > 0 ? mid[0] : null, received == null ? null : received.toInstant().toString(), null, false));
+                mid != null && mid.length > 0 ? mid[0] : null, received == null ? null : received.toInstant().toString(), null, false,
+                fromSystem && kind == null ? "bounce" : kind));
+    }
+
+    private static final Pattern OUR_ID = Pattern.compile("<kp\\.[0-9a-f]{16}@[^>\\s]+>");
+
+    /** What the headers say about the message: "bounce" (delivery report), "auto" (automatic reply), or null (a person wrote it). */
+    static String kindOf(Message m) throws MessagingException {
+        String ct = m.getContentType() == null ? "" : m.getContentType().toLowerCase(Locale.ROOT);
+        if (ct.contains("multipart/report") || ct.contains("delivery-status")) return "bounce";
+        String[] auto = m.getHeader("Auto-Submitted");
+        if (auto != null && auto.length > 0 && !auto[0].trim().equalsIgnoreCase("no")) return "auto";
+        if (m.getHeader("X-Autoreply") != null || m.getHeader("X-Autorespond") != null) return "auto";
+        String[] prec = m.getHeader("Precedence");
+        if (prec != null && prec.length > 0 && prec[0].toLowerCase(Locale.ROOT).contains("auto_reply")) return "auto";
+        return null;
+    }
+
+    /** Collects our Message-IDs from anywhere in a message (a delivery report quotes the original's headers). */
+    static void ourIds(Part p, List<String> out, int depth) {
+        if (depth > 6) return;
+        try {
+            if (p.isMimeType("multipart/*") && p.getContent() instanceof Multipart mp) {
+                for (int i = 0; i < mp.getCount(); i++) ourIds(mp.getBodyPart(i), out, depth + 1);
+            } else if (p.isMimeType("message/rfc822") && p.getContent() instanceof Part q) {
+                ourIds(q, out, depth + 1);
+            } else if (p.isMimeType("text/*")) {
+                var mm = OUR_ID.matcher(String.valueOf(p.getContent()));
+                while (mm.find()) out.add(mm.group());
+            }
+        } catch (Exception e) { /* a part that cannot be read is skipped */ }
     }
 
     /** Plain-text body: prefers text/plain, falls back to HTML with tags removed. */

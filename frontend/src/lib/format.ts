@@ -13,7 +13,7 @@ export const CAT_PLURAL: Record<Category | "all", string> = { customer: "Custome
 export const CAT_COLOR: Record<Category, string> = { customer: "var(--ok)", partner: "var(--info)", vendor: "var(--warn)", competitor: "var(--bad)", irrelevant: "var(--line)" };
 export const CATS = Object.keys(CAT) as Category[];
 export const ST: Record<LeadStatus, string> = { analyzing: "Analysing", classified: "Marked", review: "Needs review", no_email: "No email found", suppressed: "Do not contact", approved: "Queued to send", sending: "Sending", sent: "Sent", replied: "Replied", bounced: "Bounced", failed: "Failed", rejected: "Rejected", skipped: "Unreadable site" };
-export const INTENT: Record<Intent, string> = { interested: "Interested", question: "Has questions", not_interested: "Not interested", unsubscribe: "Unsubscribe", out_of_office: "Out of office", bounce: "Bounced" };
+export const INTENT: Record<Intent, string> = { interested: "Interested", question: "Has questions", not_interested: "Not interested", unsubscribe: "Unsubscribe", out_of_office: "Out of office", bounce: "Bounced", unclear: "Needs review" };
 export const SRC: Record<string, string> = { claude: "Claude", rules: "keyword rules", you: "you", template: "template" };
 
 export async function copyText(text: string, el?: HTMLTextAreaElement | null) {

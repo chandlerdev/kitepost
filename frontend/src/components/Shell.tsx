@@ -4,13 +4,15 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { useApp } from "./AppContext";
 import { Icon } from "./ui";
-import { fmt, short } from "@/lib/format";
+
+/** "Jake Zebaida" -> "JZ", "admin" -> "A" */
+const initials = (name: string) => name.trim().split(/\s+/).slice(0, 2).map(w => w[0] || "").join("") || "?";
 
 export function Shell({ children }: { children: ReactNode }) {
   const path = usePathname();
-  const { status, campaigns, user, can, signOut } = useApp();
+  const { status, user, can, signOut } = useApp();
   if (path === "/login" || !user || user.mustChangePassword) return <main className="auth-main">{children}</main>;
-  const m = status?.mode;
+  const display = user.name && !/^u_[0-9a-f]+$/i.test(user.name) ? user.name : user.email.split("@")[0];   // never show an internal id
   const inCampaigns = path.startsWith("/campaigns") && path !== "/campaigns/new";
   const cur = (p: string) => (path === p ? { "aria-current": "page" as const } : {});
   return (
@@ -22,13 +24,6 @@ export function Shell({ children }: { children: ReactNode }) {
         </div>
         <nav className="nav">
           <Link href="/campaigns" {...(inCampaigns ? { "aria-current": "page" as const } : {})}>{Icon.camp} Campaigns</Link>
-          <div className="nav-sub">
-            {campaigns.slice(0, 8).map(c => (
-              <Link key={c.id} href={`/campaigns/${c.id}`} style={path === `/campaigns/${c.id}` ? { color: "var(--ink)", fontWeight: 600 } : undefined}>
-                <span className={`dot${c.status === "running" ? " live" : ""}`} />{short(c.name, 25)}
-              </Link>
-            ))}
-          </div>
           {can.edit && <Link href="/campaigns/new" {...cur("/campaigns/new")}>{Icon.plus} New campaign</Link>}
           <Link href="/review" {...cur("/review")}>{Icon.review} Review &amp; send {status?.reviewCount ? <span className="badge" style={{ background: "var(--warn)" }}>{status.reviewCount}</span> : null}</Link>
           <Link href="/templates" {...cur("/templates")}>{Icon.template} Templates</Link>
@@ -37,21 +32,12 @@ export function Shell({ children }: { children: ReactNode }) {
           <Link href="/settings" {...cur("/settings")}>{Icon.gear} Settings</Link>
         </nav>
         <div className="whoami">
-          <div style={{ minWidth: 0 }}><b>{user.name}</b><span className="muted mono">{user.email}</span></div>
-          <span className={`pill ${user.role === "ADMIN" ? "s-replied" : user.role === "EDITOR" ? "s-sent" : "s-queued"}`}>{user.role === "ADMIN" ? "Admin" : user.role === "EDITOR" ? "Editor" : "Viewer"}</span>
-          <div className="whoami-actions"><Link href="/account" className="btn sm ghost">Account</Link><button className="btn sm ghost" onClick={signOut}>Sign out</button></div>
+          <Link href="/account" className="who" title="Your account">
+            <span className="avatar" aria-hidden="true">{initials(display)}</span>
+            <span className="who-text"><b>{display}</b><small>{user.role === "ADMIN" ? "Admin" : user.role === "EDITOR" ? "Editor" : "Viewer"}</small></span>
+          </Link>
+          <button className="signout" onClick={signOut} title="Sign out" aria-label="Sign out">{Icon.logout}</button>
         </div>
-        {m && (
-          <div className="mode">
-            <span className="eyebrow">Server</span>
-            <div><span>Database</span><b>{m.database}</b></div>
-            <div><span>Search</span><b className={m.search === "demo" ? "safe" : "live"}>{m.search === "demo" ? "Demo data" : m.search}</b></div>
-            <div><span>Classifying</span><b className={m.ai === "claude" ? "live" : "safe"}>{m.ai === "claude" ? "Claude" : "Keyword rules"}</b></div>
-            <div><span>Email</span><b className={m.email === "smtp" ? "live" : "safe"}>{m.email === "smtp" ? "Sending (SMTP)" : "Dry run"}</b></div>
-            <div><span>Replies</span><b>{{ imap: "IMAP inbox", simulated: "Simulated", off: "Off" }[m.replies]}</b></div>
-            <div><span>Sent today</span><b className="num">{fmt(status?.sentToday)} / {fmt(m.dailySendLimit)}</b></div>
-          </div>
-        )}
       </aside>
       <main className="main">{children}</main>
     </div>

@@ -213,7 +213,7 @@ export default function SettingsPage() {
     ["Emails are sent from", !!m.fromAddress, m.fromAddress || "Not set", "SMTP_FROM (or SMTP_USER when that is an email address)"],
     ["Tracking replies", m.replies === "imap", { imap: "IMAP", simulated: "Simulated", off: "Off" }[m.replies], "IMAP_HOST (uses SMTP_USER/PASS unless IMAP_USER/PASS are set)"],
     ["Replies are read from", m.replies === "imap" && !!m.replyAddress, m.replyAddress || "Not set", "IMAP_USER (replies go to this mailbox)"],
-    ["Send pace", true, `1 per ${m.sendIntervalSeconds}s · ${m.dailySendLimit}/day`, "SEND_INTERVAL_SECONDS and DAILY_SEND_LIMIT"]
+    ["Send pace", true, `1 per ${m.sendIntervalSeconds}s · ${m.dailySendLimit}/day · ${status?.sentToday ?? 0} sent today`, "SEND_INTERVAL_SECONDS and DAILY_SEND_LIMIT"]
   ] : [];
 
   return (

@@ -140,11 +140,11 @@ public final class Dtos {
                           String query, String snippet, Instant createdAt, Instant updatedAt, String status, String category,
                           Double confidence, Double score, String reason, String categorySource, String industry, String title,
                           String siteSummary, String lang, List<String> emails, List<String> pages, String email, Draft draft,
-                          SentInfo sent, Instant approvedAt, String error, String footer, String templateId, Instant openedAt, int openCount) {
+                          SentInfo sent, Instant approvedAt, String error, String footer, String templateId, Instant openedAt, int openCount, String phone) {
         public static LeadOut of(LeadEntity l, String footer) {
             return new LeadOut(l.id, l.campaignId, l.domain, l.url, l.company, l.country, l.location, l.query, l.snippet, l.createdAt,
                     l.updatedAt, l.status, l.category, l.confidence, l.score, l.reason, l.categorySource, l.industry, l.title,
-                    l.siteSummary, l.lang, l.emails, l.pages, l.email, l.draft, l.sent, l.approvedAt, l.error, footer, l.templateId, l.openedAt, l.openCount);
+                    l.siteSummary, l.lang, l.emails, l.pages, l.email, l.draft, l.sent, l.approvedAt, l.error, footer, l.templateId, l.openedAt, l.openCount, l.phone);
         }
     }
 

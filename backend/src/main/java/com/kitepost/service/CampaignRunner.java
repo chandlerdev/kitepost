@@ -118,6 +118,7 @@ public class CampaignRunner {
             l.siteSummary = Text.cut((Text.blank(site.description()) ? "" : site.description() + " ") + Text.cut(site.text(), 900), 2000);
             l.emails = site.emails();
             l.pages = site.pages();
+            if (Text.blank(l.phone) && !site.phones().isEmpty()) l.phone = Text.cut(site.phones().get(0), 60);
             l.company = Text.cut(Text.blank(cls.company()) ? companyFrom(site.title(), l.domain) : cls.company(), 300);
             String lang = cls.language() != null && cls.language().length() == 2 ? cls.language()
                     : !Text.blank(site.lang()) ? site.lang() : ref.country(l.country).map(ReferenceData.Country::lang).orElse("en");
@@ -212,6 +213,7 @@ public class CampaignRunner {
                 l.location = Text.cut(q.location(), 120);
                 l.query = Text.cut(q.q(), 500);
                 l.snippet = Text.cut(r.snippet(), 2000);
+                l.phone = Text.blank(r.phone()) ? null : Text.cut(r.phone().trim(), 60);   // the Maps listing number; the website may fill it in later
                 l.createdAt = l.updatedAt = Ids.now();
                 boolean blocked = ref.mockNames().blockedDomains().stream().anyMatch(b -> domain.equals(b) || domain.endsWith("." + b));
                 if (blocked) {

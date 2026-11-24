@@ -92,6 +92,7 @@ export function LeadDrawer({ leadId, onClose, onChanged }: { leadId: string; onC
                   <div className="field">
                     <label htmlFor="demail">Send to</label>
                     <input type="email" id="demail" value={email} onChange={e => setEmail(e.target.value)} placeholder="name@company.com" disabled={!editable && !(can.edit && l.status === "approved")} />
+                    {l.phone && <span className="hint">Phone: {l.phone}</span>}
                     {(l.emails?.length || 0) > 1 && <span className="hint">Also found: {l.emails!.filter(e => e !== l.email).join(", ")}</span>}
                   </div>
                   {editable && l.status !== "no_email" && l.email && (

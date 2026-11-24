@@ -12,7 +12,7 @@ public final class HtmlParser {
     private HtmlParser() {}
 
     public record Link(String href, String label) {}
-    public record Parsed(String title, String description, String lang, String text, List<Link> links, List<String> mailto) {}
+    public record Parsed(String title, String description, String lang, String text, List<Link> links, List<String> mailto, List<String> tel) {}
 
     private static final int F = Pattern.CASE_INSENSITIVE | Pattern.DOTALL;
     private static final Pattern TITLE = Pattern.compile("<title[^>]*>(.*?)</title>", F);
@@ -24,6 +24,7 @@ public final class HtmlParser {
     private static final Pattern TAG = Pattern.compile("<[^>]+>", F);
     private static final Pattern LINK = Pattern.compile("<a[^>]+href=[\"']([^\"'#]+)[\"'][^>]*>(.*?)</a>", F);
     private static final Pattern MAILTO = Pattern.compile("mailto:([^\"'?\\s>]+)", Pattern.CASE_INSENSITIVE);
+    private static final Pattern TEL = Pattern.compile("href=[\"']tel:([^\"'?>]+)", Pattern.CASE_INSENSITIVE);
     private static final Pattern ENTITY = Pattern.compile("&(#x?[0-9a-f]+|[a-z]+);", Pattern.CASE_INSENSITIVE);
     private static final Map<String, String> ENT = Map.ofEntries(
             Map.entry("amp", "&"), Map.entry("lt", "<"), Map.entry("gt", ">"), Map.entry("quot", "\""), Map.entry("apos", "'"),
@@ -68,7 +69,15 @@ public final class HtmlParser {
         while (mm.find()) {
             try { mailto.add(URLDecoder.decode(mm.group(1), StandardCharsets.UTF_8)); } catch (IllegalArgumentException e) { mailto.add(mm.group(1)); }
         }
-        return new Parsed(title, decode(desc).trim(), lang, text, links, mailto);
+        List<String> tel = new ArrayList<>();
+        Matcher tm = TEL.matcher(html);
+        while (tm.find()) {
+            String n;
+            try { n = URLDecoder.decode(tm.group(1).replace("+", "%2B"), StandardCharsets.UTF_8).trim(); }   // keep the + of +49...
+            catch (IllegalArgumentException e) { n = tm.group(1).trim(); }
+            if (!n.isEmpty()) tel.add(n);
+        }
+        return new Parsed(title, decode(desc).trim(), lang, text, links, mailto, tel);
     }
 
     private static final Pattern EMAIL = Pattern.compile("[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}", Pattern.CASE_INSENSITIVE);
@@ -81,6 +90,27 @@ public final class HtmlParser {
         for (String t : texts) { Matcher m = EMAIL.matcher(t); while (m.find()) set.add(m.group().toLowerCase(Locale.ROOT).replaceFirst("\\.$", "")); }
         return set.stream().filter(e -> !BAD_EMAIL.matcher(e).find())
                 .sorted(Comparator.comparingDouble(e -> rank(e, domain))).limit(6).toList();
+    }
+
+    /** A number written after a label such as "Tel:", "Phone", "Call us", "Telefon", "Tél.", "Teléfono". */
+    private static final Pattern LABELLED_PHONE = Pattern.compile(
+            "(?:tel(?:ephone|efon|éfono|efono|\\.)?|t[ée]l(?:[ée]phone)?|phone|call(?: us)?|fon|mobile|mobil|whatsapp|llamar|telefoon)\\s*[:.]?\\s*(\\+?\\(?\\d[\\d\\s().\\-/]{6,18}\\d)",
+            Pattern.CASE_INSENSITIVE);
+
+    /** Up to 3 phone numbers: tel: links first (they are meant for people to call), then numbers written after a "Phone" style label. */
+    public static List<String> extractPhones(List<String> telLinks, List<String> texts) {
+        LinkedHashMap<String, String> byDigits = new LinkedHashMap<>();   // keyed by digits so the same number is listed once
+        for (String raw : telLinks) addPhone(byDigits, raw);
+        for (String t : texts) { Matcher m = LABELLED_PHONE.matcher(t); while (m.find()) addPhone(byDigits, m.group(1)); }
+        return byDigits.values().stream().limit(3).toList();
+    }
+
+    private static void addPhone(Map<String, String> out, String raw) {
+        String shown = raw.replaceAll("\\s+", " ").trim();
+        String digits = shown.replaceAll("\\D", "");
+        if (digits.length() < 7 || digits.length() > 15) return;            // too short or too long to be a phone number
+        if (digits.chars().distinct().count() < 3) return;                  // 0000000, 1111111...
+        out.putIfAbsent(digits, shown);
     }
 
     private static double rank(String e, String domain) {

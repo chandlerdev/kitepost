@@ -103,10 +103,11 @@ public class MockCompanies {
         String domain = slug(company.replaceAll("\\b(GmbH|S\\.?L\\.?|B\\.?V\\.?|SARL|S\\.r\\.l\\.|Lda\\.|AB|ApS|A/S|AS|Oy|KK|Co\\.,? Ltd\\.|Sp\\. z o\\.o\\.|& Co\\. KG|Pvt\\. Ltd\\.)(?=\\s|$)", "")) + ".example";
         boolean hasEmail = cat.equals("irrelevant") ? rnd() < .4 : rnd() < .86;
         List<String> emails = hasEmail ? List.of(pick(List.of("info", "sales", "hello", "contact")) + "@" + domain) : List.of();
+        String phone = "+1 555 01" + (10 + (int) (rnd() * 90)) + " " + (1000 + (int) (rnd() * 9000));
         SiteReader.Site site = new SiteReader.Site("https://" + domain + "/", domain, title, description, ct.lang(),
-                text + (hasEmail ? " Email: " + emails.get(0) : ""), emails, List.of("https://" + domain + "/", "https://" + domain + "/contact"));
+                text + (hasEmail ? " Email: " + emails.get(0) : ""), emails, List.of("https://" + domain + "/", "https://" + domain + "/contact"), List.of(phone));
         sites.put(domain, site);
         if (sites.size() > 20_000) sites.clear();
-        return new SearchService.Result(site.url(), title, description);
+        return new SearchService.Result(site.url(), title, description, phone);
     }
 }

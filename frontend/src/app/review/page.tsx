@@ -76,6 +76,7 @@ export default function ReviewPage() {
           <div className="qmeta">
             <a className="mono" href={l.url} target="_blank" rel="noopener noreferrer">{l.domain} ↗</a>
             <span>{l.location && l.location !== countryName(l.country) ? l.location + ", " : ""}{countryName(l.country)}</span>
+            {l.phone && <span className="mono">{l.phone}</span>}
             <span>Fit {(Number(l.score) || 0).toFixed(1)}</span>
           </div>
         </div>
@@ -93,10 +94,19 @@ export default function ReviewPage() {
           <span className="eyebrow">Review &amp; send</span><h1>Approve emails before they go out</h1>
           <p className="muted">Only customers are listed here. Nothing is sent until you approve it.{m && ` Approved emails go out one every ${m.sendIntervalSeconds}s, up to ${m.dailySendLimit} a day.`}</p>
         </div>
+        <div className="headtools">
         <select aria-label="Campaign" style={{ width: "auto" }} value={campaign} onChange={e => setCampaign(e.target.value)}>
           <option value="all">All campaigns</option>
           {campaigns.map(c => <option key={c.id} value={c.id}>{short(c.name, 40)}</option>)}
         </select>
+        <button className="btn" disabled={busy || !campaigns.length} title={campaign === "all" ? "Download all campaigns as an Excel sheet" : "Download this campaign as an Excel sheet"} onClick={() => run(async () => {
+          const { blob, name } = await api.exportLeads(campaign);
+          const url = URL.createObjectURL(blob), a = document.createElement("a");
+          a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+          setTimeout(() => URL.revokeObjectURL(url), 10000);
+          toast("Excel sheet downloaded: company, email and contact number.");
+        })}>Export to Excel</button>
+        </div>
       </div>
       <div className="seg" role="group" aria-label="Show">
         {TABS.map(x => <button key={x.id} aria-pressed={tab === x.id} onClick={() => setTab(x.id)}>{x.label} <span className="n">{fmt(counts[x.id])}</span></button>)}

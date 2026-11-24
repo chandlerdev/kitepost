@@ -19,6 +19,17 @@ public class LeadController {
         return leads.list(campaign, category, status, q, limit);
     }
 
+    /** Excel sheet of the customer leads: company, email and contact number. campaign=all (or none) means every campaign. */
+    @GetMapping("/export")
+    public org.springframework.http.ResponseEntity<byte[]> export(@RequestParam(required = false) String campaign) {
+        LeadService.Export x = leads.exportLeads(campaign);
+        return org.springframework.http.ResponseEntity.ok()
+                .header("Content-Disposition", "attachment; filename=\"" + x.filename() + "\"")
+                .header("Cache-Control", "no-store")
+                .contentType(org.springframework.http.MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                .body(x.bytes());
+    }
+
     @PostMapping("/approve")
     @PreAuthorize("hasAnyRole('ADMIN','EDITOR')")
     public ApproveManyOut approveMany(@Valid @RequestBody IdsRequest b) { return leads.approveMany(b.ids()); }

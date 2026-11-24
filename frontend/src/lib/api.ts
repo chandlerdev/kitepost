@@ -90,6 +90,19 @@ export const api = {
   approveMany: (ids: string[]) => call<{ approved: number; skipped: { id: string; reason: string }[] }>("POST", "/leads/approve", { ids }),
   reject: (id: string) => call<LeadOut>("POST", `/leads/${id}/reject`),
   unapprove: (id: string) => call<LeadOut>("POST", `/leads/${id}/unapprove`),
+  /** Downloads an Excel sheet of the customer leads (company, email, contact number). campaign "all" = every campaign. */
+  exportLeads: async (campaign: string) => {
+    let res: Response;
+    try { res = await fetch(BASE + "/api/leads/export" + qs({ campaign }), { credentials: "same-origin", cache: "no-store" }); }
+    catch { throw new ApiError("Can't reach the server. Check your connection and try again.", 0); }
+    if (!res.ok) {
+      if (res.status === 401) window.dispatchEvent(new Event(SIGNED_OUT));
+      const data = (await res.json().catch(() => ({}))) as { error?: string };
+      throw new ApiError(data.error || `Export failed (HTTP ${res.status}).`, res.status);
+    }
+    const name = /filename="([^"]+)"/.exec(res.headers.get("content-disposition") || "")?.[1] || "kitepost-leads.xlsx";
+    return { blob: await res.blob(), name };
+  },
 
   templates: (campaign?: string) => call<Template[]>("GET", "/templates" + qs({ campaign })),
   createTemplate: (t: TemplateInput) => call<Template>("POST", "/templates", t),

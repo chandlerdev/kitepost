@@ -19,7 +19,9 @@ import java.util.*;
 /** Web search: Brave, SerpAPI (Google results), Google Programmable Search, or demo companies. */
 @Component
 public class SearchService {
-    public record Result(String url, String title, String snippet) {}
+    public record Result(String url, String title, String snippet, String phone) {
+        public Result(String url, String title, String snippet) { this(url, title, snippet, null); }
+    }
 
     private final AppProperties.Search cfg;
     private final MockCompanies mock;
@@ -71,7 +73,7 @@ public class SearchService {
             for (String k : List.of("type", "address", "phone")) { String v = Json.str(r, k); if (v != null && !v.isBlank()) bits.add(v); }
             Object rating = r.get("rating");
             if (rating != null) bits.add("rating " + rating);
-            out.add(new Result(site, Objects.toString(Json.str(r, "title"), ""), "Google Maps: " + String.join(" | ", bits)));
+            out.add(new Result(site, Objects.toString(Json.str(r, "title"), ""), "Google Maps: " + String.join(" | ", bits), Json.str(r, "phone")));
         }
         return out;
     }

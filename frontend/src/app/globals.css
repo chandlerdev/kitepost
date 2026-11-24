@@ -71,7 +71,7 @@ a.btn{text-decoration:none;color:inherit}
 
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:16px;min-width:0}
 .head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
-.head .actions{display:flex;gap:8px;flex-wrap:wrap}
+.head .actions,.headtools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 
 /* wizard */
 .wiz{max-width:860px;width:100%;display:flex;flex-direction:column;gap:20px}

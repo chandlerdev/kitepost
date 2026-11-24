@@ -72,6 +72,7 @@ export interface Lead {
   emails?: string[];
   pages?: string[];
   email?: string | null;
+  phone?: string | null;
   draft?: Draft;
   sent?: SentInfo;
   approvedAt?: string;

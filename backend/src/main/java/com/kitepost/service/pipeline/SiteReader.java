@@ -21,7 +21,11 @@ import java.util.regex.Pattern;
 /** Reads a company website: homepage plus up to two contact/about pages. */
 @Component
 public class SiteReader {
-    public record Site(String url, String domain, String title, String description, String lang, String text, List<String> emails, List<String> pages) {}
+    public record Site(String url, String domain, String title, String description, String lang, String text, List<String> emails, List<String> pages, List<String> phones) {
+        public Site(String url, String domain, String title, String description, String lang, String text, List<String> emails, List<String> pages) {
+            this(url, domain, title, description, lang, text, emails, pages, List.of());
+        }
+    }
 
     private static final int MAX_BYTES = 1_500_000;
     private static final int MAX_REDIRECTS = 4;
@@ -121,17 +125,19 @@ public class SiteReader {
                 .map(l -> l.href().split("#", 2)[0]).distinct().limit(2).toList();
         List<String> pages = new ArrayList<>(List.of(home.finalUri().toString()));
         List<String> texts = new ArrayList<>(List.of(p.text(), String.join(" ", p.mailto())));
+        List<String> tels = new ArrayList<>(p.tel());
         for (String e : extra) {
             try {
                 Page r = get(URI.create(e));
                 HtmlParser.Parsed q = HtmlParser.parse(r.html(), r.finalUri());
                 texts.add(q.text());
                 texts.add(String.join(" ", q.mailto()));
+                tels.addAll(q.tel());
                 pages.add(e);
             } catch (IOException | IllegalArgumentException ignored) { /* skip this page */ }
         }
         String all = String.join(" \n ", texts);
         return new Site(home.finalUri().toString(), domain, p.title(), p.description(), p.lang(),
-                all.length() > 12000 ? all.substring(0, 12000) : all, HtmlParser.extractEmails(texts, domain), pages);
+                all.length() > 12000 ? all.substring(0, 12000) : all, HtmlParser.extractEmails(texts, domain), pages, HtmlParser.extractPhones(tels, texts));
     }
 }

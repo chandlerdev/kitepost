@@ -30,6 +30,7 @@ public class LeadEntity {
     @Convert(converter = JsonConverters.StringList.class) public List<String> emails;
     @Convert(converter = JsonConverters.StringList.class) public List<String> pages;
     public String email;
+    public String phone;             // contact number: Maps listing first, else read from the website
     @Convert(converter = JsonConverters.DraftJson.class) public Draft draft;
     @Convert(converter = JsonConverters.SentJson.class) public SentInfo sent;
     public String sentMessageId;

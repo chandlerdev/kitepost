@@ -79,6 +79,42 @@ public class LeadService {
         return new LeadPage(page.getTotalElements(), out);
     }
 
+
+    public record Export(String filename, byte[] bytes) {}
+
+    private static final Map<String, String> STATUS_LABEL = Map.ofEntries(
+            Map.entry("review", "To review"), Map.entry("approved", "Queued"), Map.entry("sending", "Queued"), Map.entry("sent", "Sent"),
+            Map.entry("replied", "Replied"), Map.entry("bounced", "Bounced"), Map.entry("no_email", "No email"), Map.entry("rejected", "Rejected"),
+            Map.entry("failed", "Rejected"), Map.entry("suppressed", "Do not contact"));
+
+    /** An Excel sheet of the customer leads (company, email, contact number) for one campaign, or for all campaigns. */
+    public Export exportLeads(String campaign) {
+        boolean all = Text.blank(campaign) || "all".equals(campaign);
+        String scope = "all-campaigns";
+        Map<String, String> names = new HashMap<>();
+        campaigns.findAll().forEach(c -> names.put(c.id, c.name));
+        if (!all) {
+            ApiException.require(names.containsKey(campaign), "Campaign not found");
+            scope = names.get(campaign).toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9]+", "-").replaceAll("^-+|-+$", "");
+            if (scope.length() > 40) scope = scope.substring(0, 40).replaceAll("-+$", "");
+            if (scope.isEmpty()) scope = "campaign";
+        }
+        Specification<LeadEntity> spec = (root, query, cb) -> {
+            List<Predicate> p = new ArrayList<>();
+            p.add(cb.equal(root.get("category"), "customer"));
+            if (!all) p.add(cb.equal(root.get("campaignId"), campaign));
+            return cb.and(p.toArray(new Predicate[0]));
+        };
+        List<LeadEntity> found = leads.findAll(spec, Sort.by("campaignId", "company"));
+        List<List<String>> rows = new ArrayList<>();
+        for (LeadEntity l : found) {
+            rows.add(Arrays.asList(Objects.toString(l.company, ""), Objects.toString(l.email, ""), Objects.toString(l.phone, ""), Objects.toString(l.url, ""),
+                    names.getOrDefault(l.campaignId, ""), STATUS_LABEL.getOrDefault(l.status, Objects.toString(l.status, ""))));
+        }
+        byte[] bytes = XlsxWriter.write("Leads", List.of("Company", "Email", "Contact number", "Website", "Campaign", "Status"), rows, new int[]{34, 34, 22, 40, 30, 16});
+        return new Export("kitepost-leads-" + scope + "-" + java.time.LocalDate.now() + ".xlsx", bytes);
+    }
+
     public LeadOut get(String id) { return out(mustGet(id)); }
 
     public LeadOut patch(String id, LeadPatch b) {
